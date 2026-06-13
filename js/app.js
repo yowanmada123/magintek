@@ -187,3 +187,34 @@ if(fine && !reduce){
     });
   }
 }
+
+/* ---------- WRITING gallery lightbox (moved here so it runs after injection) ---------- */
+(function(){
+  const grid=document.getElementById('writingGrid');
+  if(!grid) return;
+  const items=[...grid.querySelectorAll('.cc')].map(c=>({
+    img:c.querySelector('.cc-img').src,
+    title:c.querySelector('.cc-t').textContent,
+    type:c.querySelector('.cc-s').textContent
+  }));
+  let idx=0;
+  function wRender(){
+    const d=items[idx];
+    document.getElementById('wImg').src=d.img;
+    document.getElementById('wTitle').textContent=d.title;
+    document.getElementById('wType').textContent=d.type;
+    document.getElementById('wCount').textContent=(idx+1)+' / '+items.length;
+    document.getElementById('wPrev').style.opacity=idx>0?'1':'0.3';
+    document.getElementById('wNext').style.opacity=idx<items.length-1?'1':'0.3';
+  }
+  window.wOpen=function(i){idx=i;wRender();document.getElementById('wOverlay').classList.add('open');document.body.style.overflow='hidden';};
+  window.wNav=function(d){const n=idx+d;if(n<0||n>=items.length)return;idx=n;wRender();};
+  window.wClose=function(){document.getElementById('wOverlay').classList.remove('open');document.body.style.overflow='';};
+  window.wCloseOut=function(e){if(e.target===document.getElementById('wOverlay'))wClose();};
+  document.addEventListener('keydown',e=>{
+    if(!document.getElementById('wOverlay').classList.contains('open'))return;
+    if(e.key==='Escape')wClose();
+    if(e.key==='ArrowLeft')wNav(-1);
+    if(e.key==='ArrowRight')wNav(1);
+  });
+})();

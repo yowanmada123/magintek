@@ -1,0 +1,70 @@
+<section id="contact" class="ct-bg">
+<div class="si">
+  <div class="chip">Get In Touch</div>
+  <h2 class="sh">Let&rsquo;s Build Something<br><span class="bl">Great Together</span></h2>
+  <div class="dl"></div>
+  <div class="ctg">
+    <div>
+      <p style="color:var(--muted);margin-bottom:2rem;line-height:1.85;font-size:.92rem">Have a project you want to bring to life, or need IT consulting? MAGINTEK is ready to support you from ideation through deployment and long-term maintenance.</p>
+      <div class="cil">
+        <div class="cci"><div class="ccii">&#128231;</div><div><div class="ccil">Email</div><div class="cciv">byayoan@gmail.com</div></div></div>
+        <div class="cci"><div class="ccii">&#128241;</div><div><div class="ccil">WhatsApp</div><div class="cciv">0822-3153-2679</div></div></div>
+        <div class="cci"><div class="ccii">&#128205;</div><div><div class="ccil">Location</div><div class="cciv">Surabaya, Jawa Timur, Indonesia</div></div></div>
+        <div class="cci"><div class="ccii">&#128279;</div><div><div class="ccil">LinkedIn</div><div class="cciv">linkedin.com/in/yowan-mada</div></div></div>
+        <div class="cci"><div class="ccii">&#128025;</div><div><div class="ccil">GitHub</div><div class="cciv">github.com/yowanmada123</div></div></div>
+        <div class="cci"><div class="ccii">&#127760;</div><div><div class="ccil">Mobile Portfolio</div><div class="cciv">bit.ly/MadaPortoMobile</div></div></div>
+      </div>
+      <div class="phw" style="margin-top:1.5rem">
+        <a href="https://bit.ly/MadaPortoMobile" target="_blank" class="phb">&#127775; Lihat Portfolio Lengkap</a>
+      </div>
+    </div>
+    <div class="cfcard">
+      <div class="cfh">Start a Project</div>
+      <div class="cfs">Tell us your requirements &mdash; we respond within 24 hours.</div>
+      <div class="cff">
+        <div class="cfr">
+          <div class="cfg"><label>Full Name *</label><input type="text" placeholder="Your full name"></div>
+          <div class="cfg"><label>Company</label><input type="text" placeholder="Company / project name"></div>
+        </div>
+        <div class="cfg"><label>Email *</label><input type="email" placeholder="email@company.com"></div>
+        <div class="cfg"><label>WhatsApp</label><input type="text" placeholder="08xx-xxxx-xxxx"></div>
+        <div class="cfg"><label>Service Needed</label><input type="text" placeholder="Web Dev / Mobile App / IT Consulting..."></div>
+        <div class="cfg"><label>Budget Range</label><input type="text" placeholder="Rp 5.000.000 &mdash; Rp 50.000.000+"></div>
+        <div class="cfg"><label>Project Description *</label><textarea rows="4" placeholder="Tell us your requirements, timeline, and specific project details..."></textarea></div>
+        <!-- <button class="cfsub" onclick="alert('Terima kasih! Silakan hubungi langsung:\nWhatsApp: 0822-3153-2679\nEmail: byayoan@gmail.com')">Send Message &mdash; Let&rsquo;s Talk &rarr;</button> -->
+        <button class="cfsub" onclick="sendToWA()">Send Message &mdash; Let&rsquo;s Talk &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">MAGIN<span class="fld"></span><span class="flb">TEK</span></div>
+  <div class="ftag">SOFTWARE DEVELOPMENT &amp; IT CONSULTING &middot; SURABAYA, INDONESIA</div>
+  <div class="fnav">
+    <a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#portfolio-mobile">Mobile</a><a href="#catalog">Catalog</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </div>
+  <a href="https://bit.ly/MadaPortoMobile" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:rgba(240,153,0,.15);border:1px solid rgba(240,153,0,.3);color:#f09900;padding:.6rem 1.4rem;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none">&#127775; Mobile Portfolio &rarr;</a>
+  <div class="fcopy">&copy; 2025 MAGINTEK &mdash; Yowanda Frisky Amada. All rights reserved. Crafted in Surabaya, East Java.</div>
+</footer>
+
+<!-- MODAL -->
+<div class="mo" id="mOverlay" onclick="mCloseOut(event)">
+  <button class="mcl2" onclick="mClose()">&#10005;</button>
+  <button class="mnav" id="mPrev" onclick="mNav(-1)">&#8592;</button>
+  <div class="mb" id="mBox">
+    <div class="mi"><img id="mImg" class="mimg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div>
+    <div class="minfo">
+      <div class="mt" id="mTitle"></div>
+      <div class="mty" id="mType"></div>
+      <div class="mcl" id="mClient"></div>
+      <div class="md" id="mDesc"></div>
+      <div class="mte" id="mTech"></div>
+      <div class="mc" id="mCount"></div>
+    </div>
+  </div>
+  <button class="mnav" id="mNext" onclick="mNav(1)">&#8594;</button>
+</div>
+
