@@ -31,6 +31,7 @@
     <li><a href="#services">Services</a></li>
     
     <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#catalog">Catalog</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -50,6 +51,7 @@
 
 <div id="sec-portfolio"></div>
 <div id="sec-portfolio-mobile"></div>
+<div id="sec-reviews"></div>
 <div id="sec-catalog"></div>
 <div id="sec-writing"></div>
 <div id="sec-experience"></div>
@@ -63,7 +65,7 @@
 <script>
 const SECTIONS = [
   'hero','about','services','stack','writing',
-  'portfolio','portfolio-mobile','catalog','experience','contact'
+  'portfolio','portfolio-mobile','reviews','catalog','experience','contact'
 ];
 
 Promise.all(SECTIONS.map(name =>
@@ -73,8 +75,15 @@ Promise.all(SECTIONS.map(name =>
       document.getElementById('sec-' + name).outerHTML = html;
     })
 )).then(() => {
-  // Sections are now in the DOM — load app.js, which wires up nav,
-  // filters, the lightbox modal, reveal animations, and the 3D tilt/parallax.
+  // Scripts inside innerHTML/outerHTML are not executed by the browser.
+  // Re-create each injected <script> as a real script element so it runs.
+  document.querySelectorAll('body script[data-section]').forEach(old => {
+    const s = document.createElement('script');
+    s.textContent = old.textContent;
+    old.replaceWith(s);
+  });
+
+  // Load app.js, which wires up nav, filters, lightbox, reveal animations, etc.
   const s = document.createElement('script');
   s.src = 'js/app.js';
   document.body.appendChild(s);

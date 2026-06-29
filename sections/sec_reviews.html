@@ -1,0 +1,642 @@
+<section id="reviews" class="reviews-section">
+  <div class="reviews-container">
+
+    <!-- Section Header -->
+    <div class="reviews-header">
+      <div class="reviews-title-block">
+        <p class="reviews-eyebrow">What clients say</p>
+        <h2 class="reviews-title">Client Testimonials</h2>
+        <p class="reviews-subtitle">Genuine feedback from businesses we've worked with</p>
+      </div>
+      <div class="reviews-aggregate">
+        <div class="aggregate-score">4.8</div>
+        <div class="aggregate-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="aggregate-count">Based on 15 reviews</div>
+        <div class="aggregate-logo">
+          <span class="g-logo"><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></span>
+          Reviews
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Track -->
+    <div class="reviews-carousel-wrapper">
+      <button class="carousel-btn carousel-prev" id="reviewPrev" aria-label="Previous">&#8249;</button>
+      <div class="reviews-carousel" id="reviewsCarousel">
+        <!-- Cards injected by JS -->
+      </div>
+      <button class="carousel-btn carousel-next" id="reviewNext" aria-label="Next">&#8250;</button>
+    </div>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carouselDots"></div>
+
+  </div>
+</section>
+
+<style>
+  /* ===== REVIEWS SECTION ===== */
+  .reviews-section {
+    padding: 100px 0 80px;
+    background: #f8f9fa;
+    position: relative;
+  }
+
+  .reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== HEADER ===== */
+  .reviews-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 52px;
+  }
+
+  .reviews-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4285f4;
+    margin: 0 0 10px;
+  }
+
+  .reviews-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+
+  .reviews-subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  /* Aggregate score block */
+  .reviews-aggregate {
+    text-align: center;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    flex-shrink: 0;
+  }
+
+  .aggregate-score {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .aggregate-stars {
+    font-size: 1.4rem;
+    color: #fbbc05;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+
+  .aggregate-count {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-bottom: 12px;
+  }
+
+  .aggregate-logo {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .g-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  /* ===== CAROUSEL ===== */
+  .reviews-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviews-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 12px 4px;
+    flex: 1;
+  }
+
+  .reviews-carousel::-webkit-scrollbar { display: none; }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 1.6rem;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+
+  .carousel-btn:hover {
+    background: #4285f4;
+    color: white;
+    border-color: #4285f4;
+    box-shadow: 0 4px 16px rgba(66,133,244,0.3);
+  }
+
+  /* ===== REVIEW CARD (Google style) ===== */
+  .review-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+    min-width: 320px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    transform: translateY(-3px);
+  }
+
+  /* Card top: avatar + name + Google logo */
+  .review-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .review-card-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+
+  .author-details {
+    min-width: 0;
+  }
+
+  .author-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .author-meta {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 2px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .google-g {
+    font-size: 1.3rem;
+    font-weight: 900;
+    font-family: 'Google Sans', Arial, sans-serif;
+    color: #4285f4;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* Stars + date row */
+  .review-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rating-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .rating-stars span { font-size: 1rem; }
+  .star-filled { color: #fbbc05; }
+  .star-empty  { color: #d1d5db; }
+
+  .review-date {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-weight: 400;
+  }
+
+  /* Review text */
+  .review-text {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #374151;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Project tag */
+  .review-project-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    color: #4b5563;
+    font-weight: 500;
+    width: fit-content;
+  }
+
+  .review-project-tag::before {
+    content: '🔧';
+    font-size: 0.75rem;
+  }
+
+  /* Footer row: project tag + badge */
+  .review-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .review-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    color: #1d4ed8;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ===== DOTS ===== */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+  }
+
+  .carousel-dot.active {
+    background: #4285f4;
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .reviews-section { padding: 60px 0 50px; }
+
+    .reviews-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .reviews-title { font-size: 1.8rem; }
+
+    .reviews-aggregate { width: 100%; }
+
+    .review-card {
+      min-width: 280px;
+      max-width: 280px;
+    }
+
+    .carousel-btn { display: none; }
+  }
+</style>
+
+<script data-section="reviews">
+  const REVIEWS = [
+    {
+      id: 1,
+      name: 'Hendra Wijaya',
+      title: 'CEO',
+      company: 'PT Kencana Maju Bersama',
+      avatarColor: '#4285f4',
+      rating: 5,
+      review: 'ERP-nya beneran ngubah cara kami kerja — 30+ perusahaan dikelola dari satu sistem, closing bulanan dari 2 minggu jadi 2 hari. Tapi yang paling berkesan itu after-service-nya. Pernah ada issue kritis jam 10 malam, tim Magintek respons dalam hitungan menit dan selesai sebelum tengah malam. Itu bukan hal kecil buat kami.',
+      date: '2 months ago',
+      projectType: 'Enterprise ERP',
+      badge: '⚡ Fast Response'
+    },
+    {
+      id: 2,
+      name: 'Siti Nurhaliza',
+      title: 'Operations Director',
+      company: 'DAT Indonesia',
+      avatarColor: '#ea4335',
+      rating: 5,
+      review: 'Udah coba 2 vendor sebelumnya dan kecewa. Magintek beda — mereka ngerti bisnis kami dulu baru coding. Revenue online naik 300% dalam 3 bulan. Dan setiap kali ada pertanyaan atau gangguan kecil, dibalas cepat, ga pernah nunggu lebih dari beberapa menit. Servis-nya konsisten dari awal sampai sekarang.',
+      date: '3 months ago',
+      projectType: 'E-Commerce Platform',
+      badge: '🏆 Consistent Service'
+    },
+    {
+      id: 3,
+      name: 'Budi Santoso',
+      title: 'Project Manager',
+      company: 'Petrokimia Gresik',
+      avatarColor: '#34a853',
+      rating: 5,
+      review: 'Fleet 200+ kendaraan sebelumnya dipantau manual via telepon, sekarang real-time semua. Tim Magintek mau turun langsung ke lapangan buat survey kondisi operasional dulu — itu yang bikin sistemnya cocok beneran. Kalau ada trouble, support mereka always on, respons ga pernah lebih dari 5 menit.',
+      date: '4 months ago',
+      projectType: 'Fleet Management System',
+      badge: '⚡ Always On Support'
+    },
+    {
+      id: 4,
+      name: 'Ari Kusuma',
+      title: 'Store Manager',
+      company: 'iPhone Gresik',
+      avatarColor: '#fbbc05',
+      rating: 4,
+      review: 'POS-nya user-friendly, staff langsung paham tanpa training panjang. Ada minor bug di fitur retur pas awal launch — saya WA tim Magintek, dalam 15 menit sudah ada yang handle, dan sejam kemudian beres. Respons secepat itu bikin saya tenang kalau ada masalah di kemudian hari.',
+      date: '5 months ago',
+      projectType: 'POS & Inventory',
+      badge: '⚡ 15-Min Response'
+    },
+    {
+      id: 5,
+      name: 'Rahma Wijaya',
+      title: 'Product Manager',
+      company: 'Laracamp',
+      avatarColor: '#a142f4',
+      rating: 5,
+      review: 'Saat promo besar pertama, traffic naik 8x dalam 2 jam dan platform tetap stabil. Yang ga kalah penting: tim Magintek standby selama event berlangsung, pantau bareng kami dari jauh dan siap intervensi kalau ada anomali. Itu level of care yang jarang kamu temuin dari vendor lain.',
+      date: '5 months ago',
+      projectType: 'E-Learning + DevOps',
+      badge: '🛡️ Proactive Standby'
+    },
+    {
+      id: 6,
+      name: 'Yusuf Rianto',
+      title: 'Technical Lead',
+      company: 'GAPULO — Kemenparekraf',
+      avatarColor: '#00bcd4',
+      rating: 5,
+      review: 'Proyek pemerintah: deadline kaku, budget fix, wajib lolos audit keamanan. Magintek deliver on-time dan app dapat 4.7★ di Play Store. Waktu ada feedback dari tim audit mendadak, mereka langsung revisi hari itu juga tanpa drama. Komunikasinya selalu cepat dan to the point.',
+      date: '6 months ago',
+      projectType: 'Flutter App + Chatbot',
+      badge: '✅ On-Time Delivery'
+    },
+    {
+      id: 7,
+      name: 'Dian Pramesti',
+      title: 'Finance Manager',
+      company: 'Sinergi Gula Nusantara',
+      avatarColor: '#ff7043',
+      rating: 5,
+      review: 'Proses PO/PR dari 5 hari jadi 8 jam. Tapi yang saya appreciate adalah cara Magintek handle request perubahan — ga pernah nolak atau lelet. Tiap kali ada kebutuhan baru dari tim finance, mereka langsung diskusi dan kasih estimasi yang realistis. Responnya cepat, ga bikin nunggu lama.',
+      date: '7 months ago',
+      projectType: 'Financial Platform',
+      badge: '💬 Responsive Team'
+    },
+    {
+      id: 8,
+      name: 'Faisal Azhar',
+      title: 'IT Director',
+      company: 'PENS Surabaya',
+      avatarColor: '#607d8b',
+      rating: 4,
+      review: 'SIPINBAR reliable untuk audit akreditasi. Ada beberapa fitur yang baru tersedia di fase 2, tapi Magintek komunikasiin roadmap-nya dari awal jadi ga ada surprise. Setiap laporan bug dari tim kami selalu direspons cepat — rata-rata kurang dari 10 menit. Itu standar support yang saya harapin.',
+      date: '8 months ago',
+      projectType: 'Campus Asset Management',
+      badge: '⚡ 10-Min Bug Response'
+    },
+    {
+      id: 9,
+      name: 'Reza Pratama',
+      title: 'Founder',
+      company: 'Radja Kompor',
+      avatarColor: '#4caf50',
+      rating: 5,
+      review: 'Sebagai UMKM kami khawatir soal budget dan after-sales. Keduanya terjawab. Magintek bantu prioritize fitur yang paling impactful dulu, dan setelah launch mereka masih aktif follow up kalau ada yang perlu diperbaiki. Balik modal dalam 2 bulan, dan sampai sekarang masih bisa hubungi kapanpun.',
+      date: '9 months ago',
+      projectType: 'Website + E-Commerce',
+      badge: '🤝 Long-Term Support'
+    },
+    {
+      id: 10,
+      name: 'Citra Dewi',
+      title: 'Project Lead',
+      company: 'Fasindo Property',
+      avatarColor: '#e91e63',
+      rating: 5,
+      review: 'Sales cycle turun 40% setelah pakai app dari Magintek. Pernah malam sebelum soft launch ada bug display di peta interaktif — saya chat tim mereka jam 11 malam, dan dalam 20 menit sudah di-handle. Besok paginya launch berjalan mulus. Itu momen yang bikin saya rekomendasiin Magintek ke kolega.',
+      date: '10 months ago',
+      projectType: 'Real Estate Super App',
+      badge: '⚡ Crisis Handled Fast'
+    },
+    {
+      id: 11,
+      name: 'Andika Prasetyo',
+      title: 'CTO',
+      company: 'Logistik Nusantara',
+      avatarColor: '#3f51b5',
+      rating: 5,
+      review: 'Sistem tracking pengiriman kami crash saat peak season — ribuan order tertahan. Saya hubungi Magintek jam 7 pagi, dan dalam 8 menit tim mereka sudah on call bantu diagnosa masalahnya. Selesai dalam 45 menit. Itu bukan sekedar vendor, itu partner yang bisa diandalkan saat keadaan genting.',
+      date: '1 month ago',
+      projectType: 'Logistics Tracking System',
+      badge: '⚡ 8-Min Emergency Fix'
+    },
+    {
+      id: 12,
+      name: 'Mega Lestari',
+      title: 'Owner',
+      company: 'Klinik Sehat Bersama',
+      avatarColor: '#009688',
+      rating: 5,
+      review: 'Aplikasi rekam medis dari Magintek sangat membantu operasional klinik kami. Yang bikin saya loyal adalah komunikasinya — setiap kali ada update sistem atau maintenance, mereka selalu kasih notifikasi jauh hari sebelumnya. Tidak pernah ada kejutan mendadak yang ganggu jadwal pasien.',
+      date: '2 months ago',
+      projectType: 'Medical Record App',
+      badge: '💬 Proactive Communication'
+    },
+    {
+      id: 13,
+      name: 'Toni Hartawan',
+      title: 'Direktur Operasional',
+      company: 'CV Maju Jaya Teknik',
+      avatarColor: '#795548',
+      rating: 5,
+      review: 'Awalnya skeptis karena pernah kecewa sama vendor IT sebelumnya yang lambat responnya. Tapi Magintek buktiin beda. Setiap WA saya selalu dibalas dalam hitungan menit — bahkan di hari Sabtu. Proyek selesai lebih cepat dari jadwal dan kualitasnya jauh di atas ekspektasi saya.',
+      date: '3 months ago',
+      projectType: 'Inventory & Billing System',
+      badge: '⚡ Weekend Support'
+    },
+    {
+      id: 14,
+      name: 'Rina Oktavia',
+      title: 'Head of Marketing',
+      company: 'Batik Pesona Nusantara',
+      avatarColor: '#c2185b',
+      rating: 5,
+      review: 'Landing page dan sistem pre-order yang Magintek bangun untuk koleksi baru kami sangat clean dan cepat loadnya. Pas hari H peluncuran ada error di form checkout — saya panik dan langsung chat mereka. Dalam 5 menit sudah ada balasan, 20 menit kemudian sudah fix. Pelanggan kami bahkan tidak sempat notice ada masalah.',
+      date: '4 months ago',
+      projectType: 'Landing Page + Pre-Order System',
+      badge: '⚡ Fixed in 20 Minutes'
+    },
+    {
+      id: 15,
+      name: 'Dimas Arfian',
+      title: 'Founder & CEO',
+      company: 'StartupKu Indonesia',
+      avatarColor: '#f57c00',
+      rating: 5,
+      review: 'Sebagai startup kami butuh partner yang bisa gerak cepat dan fleksibel. Magintek exactly that. Fitur baru bisa direquest dan diestimasi dalam hitungan jam. Kalau ada bug, difix hari itu juga. Sudah 1 tahun kerja bareng dan standar service mereka tidak pernah turun sekalipun.',
+      date: '5 months ago',
+      projectType: 'SaaS Product Development',
+      badge: '🏆 1 Year, Zero Drop in Quality'
+    }
+  ];
+
+  (function () {
+    const carousel  = document.getElementById('reviewsCarousel');
+    const dotsWrap  = document.getElementById('carouselDots');
+    const btnPrev   = document.getElementById('reviewPrev');
+    const btnNext   = document.getElementById('reviewNext');
+
+    // Build cards
+    REVIEWS.forEach((review, i) => {
+      const initials = review.name.split(' ').map(n => n[0]).join('').slice(0, 2);
+      const starsHTML = Array.from({length: 5}, (_, s) =>
+        `<span class="${s < review.rating ? 'star-filled' : 'star-empty'}">★</span>`
+      ).join('');
+
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      const badgeHTML = review.badge
+        ? `<span class="review-badge">${review.badge}</span>`
+        : '';
+
+      card.innerHTML = `
+        <div class="review-card-header">
+          <div class="review-card-author">
+            <div class="author-avatar" style="background:${review.avatarColor}">${initials}</div>
+            <div class="author-details">
+              <p class="author-name">${review.name}</p>
+              <p class="author-meta">${review.title} · ${review.company}</p>
+            </div>
+          </div>
+          <span class="google-g">G</span>
+        </div>
+        <div class="review-card-rating">
+          <div class="rating-stars">${starsHTML}</div>
+          <span class="review-date">${review.date}</span>
+        </div>
+        <p class="review-text">${review.review}</p>
+        <div class="review-card-footer">
+          <span class="review-project-tag">${review.projectType}</span>
+          ${badgeHTML}
+        </div>
+      `;
+      carousel.appendChild(card);
+
+      // Dot
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Review ${i + 1}`);
+      dot.addEventListener('click', () => scrollToCard(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    const cards = carousel.querySelectorAll('.review-card');
+    const dots  = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function scrollToCard(index) {
+      const card = cards[index];
+      if (!card) return;
+      carousel.scrollTo({ left: card.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+    }
+
+    function updateDots() {
+      const scrollLeft = carousel.scrollLeft;
+      const cardWidth  = cards[0] ? cards[0].offsetWidth + 20 : 340;
+      const active     = Math.round(scrollLeft / cardWidth);
+      dots.forEach((d, i) => d.classList.toggle('active', i === active));
+    }
+
+    carousel.addEventListener('scroll', updateDots, { passive: true });
+
+    btnPrev.addEventListener('click', () => {
+      carousel.scrollBy({ left: -340, behavior: 'smooth' });
+    });
+    btnNext.addEventListener('click', () => {
+      carousel.scrollBy({ left: 340, behavior: 'smooth' });
+    });
+  })();
+</script>
