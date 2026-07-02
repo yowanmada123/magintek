@@ -97,8 +97,22 @@ function filterM(btn,cat){
 const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
+// Mobile nav drawer
+const hbtn=document.getElementById('hbtn');
+const mdrawer=document.getElementById('mdrawer');
+function openDrawer(){mdrawer.classList.add('open');hbtn.classList.add('open');hbtn.setAttribute('aria-expanded','true');document.body.classList.add('no-scroll');}
+function closeDrawer(){mdrawer.classList.remove('open');hbtn.classList.remove('open');hbtn.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll');}
+window.closeDrawer=closeDrawer;
+if(hbtn&&mdrawer){
+  hbtn.addEventListener('click',()=>{mdrawer.classList.contains('open')?closeDrawer():openDrawer();});
+  mdrawer.querySelector('.mdrawer-backdrop').addEventListener('click',closeDrawer);
+  mdrawer.querySelector('.mdrawer-close').addEventListener('click',closeDrawer);
+  mdrawer.querySelectorAll('.mdrawer-nl a').forEach(a=>a.addEventListener('click',closeDrawer));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+}
+
 // Nav active + glass
-const nl=document.querySelectorAll('.nl a');
+const nl=document.querySelectorAll('.nl a, .mdrawer-nl a');
 const navEl=document.getElementById('nav');
 const sbar=document.getElementById('sbar');
 const orbs=[...document.querySelectorAll('.scene-bg .orb')];

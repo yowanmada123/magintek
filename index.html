@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MAGINTEK — Software Development & IT Consulting | Surabaya</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
 <meta name="description" content="MAGINTEK — production-ready full-stack web, Flutter mobile apps, and IT consulting by Yowanda Frisky Amada. 37+ projects delivered across Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +42,36 @@
   <div class="nr">
     <a href="./assets/cv-mada-11-06-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-porto">📄 Curriculum Vitae</a>
     <button class="btn-hire" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Us &rarr;</button>
+    <button class="hbtn" id="hbtn" aria-label="Open menu" aria-expanded="false" aria-controls="mdrawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mdrawer" id="mdrawer">
+  <div class="mdrawer-backdrop"></div>
+  <div class="mdrawer-panel">
+    <div class="mdrawer-head">
+      <a href="#hero" class="logo">MAGIN<span class="ld"></span><span class="lb">TEK</span></a>
+      <button class="mdrawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mdrawer-nl">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#catalog">Catalog</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mdrawer-cta">
+      <a href="./assets/cv-mada-11-06-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-porto">📄 Curriculum Vitae</a>
+      <button class="btn-hire" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});window.closeDrawer&&closeDrawer();">Hire Us &rarr;</button>
+    </div>
+  </div>
+</div>
 
 <!-- SECTIONS: each container below is replaced by its own file from /sections at runtime -->
 <div id="sec-hero"></div>

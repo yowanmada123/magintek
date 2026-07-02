@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes playwright --version)",
+      "Bash(node inspect.js)",
+      "Bash(sed -i \"s/document.querySelector\\('.hero'\\)/document.querySelector\\('#hero'\\)/\" inspect.js)",
+      "Bash(sed -i \"s/const chip = document.querySelector\\('.hero-chip'\\);/const chip = document.querySelector\\('.hero-chip'\\); const heroClass = document.getElementById\\('hero'\\).className;/\" inspect.js)",
+      "Bash(sed -i \"s/winWidth: window.innerWidth,/winWidth: window.innerWidth, heroClass,/\" inspect.js)",
+      "Bash(node shot.js)",
+      "Bash(pkill -f \"http.server 8090\")",
+      "Bash(node shot3.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8090/index.html)",
+      "Bash(node debug-hbtn.js)",
+      "Bash(curl -s -I http://localhost:8090/js/app.js)",
+      "Bash(curl -s -I http://localhost:8090/index.html)",
+      "Bash(node favicon-check.js)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node favicon-tab-check.js)",
+      "Bash(node portfolio-link-check.js)",
+      "Bash(node portfolio-link-check2.js)"
+    ]
+  }
+}
