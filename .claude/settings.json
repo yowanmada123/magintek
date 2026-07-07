@@ -28,7 +28,16 @@
       "Bash(python -c ' *)",
       "Bash(node catalog-modal-check.js)",
       "Bash(node reviews-drag-check2.js)",
-      "Bash(node full-regression.js)"
+      "Bash(node full-regression.js)",
+      "Bash(sort -k5 -rn)",
+      "Bash(node render-og.js)",
+      "Bash(node render-og-final.js)",
+      "Bash(node wa-float-check.js)",
+      "Bash(node hire-us-check.js)",
+      "Bash(node build.js)",
+      "Bash(node static-check.js)",
+      "Bash(node extra-regression.js)",
+      "Bash(node footer-check.js)"
     ]
   }
 }
