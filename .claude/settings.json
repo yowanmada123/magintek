@@ -18,7 +18,17 @@
       "Bash(npm install *)",
       "Bash(node favicon-tab-check.js)",
       "Bash(node portfolio-link-check.js)",
-      "Bash(node portfolio-link-check2.js)"
+      "Bash(node portfolio-link-check2.js)",
+      "Bash(node modal-check.js)",
+      "Bash(node modal-check-mobile.js)",
+      "Bash(node modal-check-webkit.js)",
+      "Bash(node modal-check-repeat.js)",
+      "Bash(node reviews-drag-check.js)",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(node catalog-modal-check.js)",
+      "Bash(node reviews-drag-check2.js)",
+      "Bash(node full-regression.js)"
     ]
   }
 }

@@ -16,6 +16,10 @@ function openM(idx){
   document.getElementById('mOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
+document.addEventListener('click',e=>{
+  const card=e.target.closest('[data-idx]');
+  if(card) openM(parseInt(card.dataset.idx));
+});
 
 function sendToWA() {
     const name = document.querySelector('.cfg input[placeholder="Your full name"]').value;
@@ -44,7 +48,7 @@ function sendToWA() {
   *Description:*
   ${desc}`;
 
-    const url = 'https://wa.me/6282231532679?text=' + encodeURIComponent(msg);
+    const url = 'https://wa.me/6285778133205?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   }
 function renderM(){

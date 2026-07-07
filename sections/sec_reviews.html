@@ -148,9 +148,13 @@
     scrollbar-width: none;
     padding: 12px 4px;
     flex: 1;
+    cursor: grab;
+    user-select: none;
   }
 
   .reviews-carousel::-webkit-scrollbar { display: none; }
+  .reviews-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
+  .reviews-carousel.dragging .review-card { pointer-events: none; }
 
   .carousel-btn {
     width: 44px;
@@ -638,5 +642,32 @@
     btnNext.addEventListener('click', () => {
       carousel.scrollBy({ left: 340, behavior: 'smooth' });
     });
+
+    // Drag-to-scroll with mouse (touch already scrolls natively via overflow-x)
+    const DRAG_THRESHOLD = 4;
+    const drag = { active: false, moved: false, startX: 0, startScroll: 0 };
+
+    carousel.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      drag.active = true;
+      drag.moved = false;
+      drag.startX = e.pageX;
+      drag.startScroll = carousel.scrollLeft;
+      carousel.classList.add('dragging');
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!drag.active) return;
+      const dx = e.pageX - drag.startX;
+      if (Math.abs(dx) > DRAG_THRESHOLD) drag.moved = true;
+      carousel.scrollLeft = drag.startScroll - dx;
+    });
+    window.addEventListener('mouseup', () => {
+      drag.active = false;
+      carousel.classList.remove('dragging');
+    });
+    // suppress the click that follows a drag so it doesn't open/scroll-snap unexpectedly
+    carousel.addEventListener('click', (e) => {
+      if (drag.moved) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
   })();
 </script>
