@@ -4,6 +4,19 @@
     plus tasteful 3D depth: tilt, glare, parallax, scroll progress)
    ========================================================= */
 
+// Theme toggle (dark/light) — attribute set on <html> is initialized inline
+// in <head> before first paint; this just wires up the toggle buttons.
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  try{ localStorage.setItem('mgt-theme', t); }catch(e){}
+}
+document.querySelectorAll('.theme-toggle').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    setTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+});
+
 let mIdx=0, mList=[];
 
 function openM(idx){
