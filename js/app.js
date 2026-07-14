@@ -61,6 +61,17 @@ function renderM(){
   document.getElementById('mClient').textContent=d.client?('Client: '+d.client):'';
   document.getElementById('mDesc').textContent=d.desc;
   document.getElementById('mTech').innerHTML=d.tech.map(t=>`<span class="mtg">${t}</span>`).join('');
+  const mVisit=document.getElementById('mVisit');
+  mVisit.hidden=false;
+  if(d.url){
+    mVisit.href=d.url;
+    mVisit.style.opacity='1';
+    mVisit.style.pointerEvents='auto';
+  }else{
+    mVisit.removeAttribute('href');
+    mVisit.style.opacity='0.35';
+    mVisit.style.pointerEvents='none';
+  }
   document.getElementById('mCount').textContent=(mIdx+1)+' / '+mList.length;
   document.getElementById('mPrev').style.opacity=mIdx>0?'1':'0.3';
   document.getElementById('mNext').style.opacity=mIdx<mList.length-1?'1':'0.3';
@@ -96,6 +107,22 @@ function filterM(btn,cat){
     c.style.display='block';
   });
 }
+
+// Portfolio Website/Mobile choice modal
+function openPfChoice(e){
+  e.preventDefault();
+  document.getElementById('pfChoice').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(window.closeDrawer) closeDrawer();
+  return false;
+}
+function closePfChoice(){
+  document.getElementById('pfChoice').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && document.getElementById('pfChoice').classList.contains('open')) closePfChoice();
+});
 
 // Scroll reveal
 const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});

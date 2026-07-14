@@ -6,7 +6,7 @@
 <title>MAGINTEK — Software Development & IT Consulting | Surabaya</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 <link rel="alternate icon" href="assets/favicon.svg?v=2">
-<meta name="description" content="MAGINTEK — production-ready full-stack web, Flutter mobile apps, and IT consulting by Yowanda Frisky Amada. 37+ projects delivered across Indonesia.">
+<meta name="description" content="MAGINTEK — production-ready full-stack web, Flutter mobile apps, and IT consulting by Yowanda Frisky Amada. 45+ projects delivered across Indonesia.">
 <link rel="canonical" href="https://magintek.my.id/">
 
 <!-- Open Graph -->
@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://magintek.my.id/">
 <meta property="og:site_name" content="MAGINTEK">
 <meta property="og:title" content="MAGINTEK — Software Development & IT Consulting | Surabaya">
-<meta property="og:description" content="Build Smarter. Digital Solutions That Scale. Full-stack web, Flutter mobile apps & IT consulting — 37+ projects delivered across Indonesia.">
+<meta property="og:description" content="Build Smarter. Digital Solutions That Scale. Full-stack web, Flutter mobile apps & IT consulting — 45+ projects delivered across Indonesia.">
 <meta property="og:image" content="https://magintek.my.id/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MAGINTEK — Software Development & IT Consulting | Surabaya">
-<meta name="twitter:description" content="Build Smarter. Digital Solutions That Scale. Full-stack web, Flutter mobile apps & IT consulting — 37+ projects delivered across Indonesia.">
+<meta name="twitter:description" content="Build Smarter. Digital Solutions That Scale. Full-stack web, Flutter mobile apps & IT consulting — 45+ projects delivered across Indonesia.">
 <meta name="twitter:image" content="https://magintek.my.id/assets/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   "url": "https://magintek.my.id/",
   "telephone": "+6285778133205",
   "email": "byayoan@gmail.com",
-  "description": "Production-ready full-stack web solutions, Flutter mobile apps, and IT consulting by Yowanda Frisky Amada. 37+ projects delivered across Indonesia.",
+  "description": "Production-ready full-stack web solutions, Flutter mobile apps, and IT consulting by Yowanda Frisky Amada. 45+ projects delivered across Indonesia.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Surabaya",
@@ -108,7 +108,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   <ul class="nl">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#portfolio" onclick="return openPfChoice(event)">Portfolio</a></li>
     <li><a href="#catalog">Catalog</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -135,7 +135,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <ul class="mdrawer-nl">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#portfolio" onclick="return openPfChoice(event)">Portfolio</a></li>
       <li><a href="#catalog">Catalog</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -154,6 +154,28 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.482L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.6a9.55 9.55 0 0 1-4.87-1.33l-.35-.207-4.583 1.108 1.127-4.463-.23-.366A9.56 9.56 0 0 1 5.4 15c0-5.85 4.76-10.6 10.604-10.6 5.843 0 10.596 4.75 10.596 10.6 0 5.85-4.753 10.6-10.596 10.6zm5.822-7.94c-.318-.16-1.885-.93-2.177-1.036-.293-.107-.506-.16-.72.16-.212.319-.824 1.036-1.01 1.25-.187.213-.373.24-.692.08-.318-.16-1.343-.494-2.558-1.573-.945-.842-1.583-1.882-1.768-2.2-.186-.32-.02-.492.14-.652.144-.143.319-.373.478-.56.16-.187.213-.32.32-.532.106-.213.053-.4-.027-.56-.08-.16-.72-1.733-.986-2.373-.26-.626-.524-.54-.72-.55-.186-.01-.4-.01-.613-.01a1.18 1.18 0 0 0-.852.4c-.293.32-1.117 1.092-1.117 2.664 0 1.572 1.144 3.09 1.303 3.303.16.213 2.253 3.44 5.46 4.826.763.33 1.358.527 1.822.674.766.244 1.462.21 2.013.127.614-.092 1.885-.77 2.15-1.514.267-.744.267-1.38.187-1.513-.08-.134-.293-.214-.612-.374z"/></svg>
 </a>
 
+<!-- PORTFOLIO CHOICE MODAL -->
+<div class="pfchoice" id="pfChoice">
+  <div class="pfchoice-backdrop" onclick="closePfChoice()"></div>
+  <div class="pfchoice-panel">
+    <button class="pfchoice-close" onclick="closePfChoice()" aria-label="Close">&times;</button>
+    <h3 class="pfchoice-title">View Portfolio</h3>
+    <p class="pfchoice-sub">Choose which portfolio you'd like to explore</p>
+    <div class="pfchoice-opts">
+      <a href="#portfolio" class="pfchoice-opt" onclick="closePfChoice()">
+        <div class="pfchoice-icon">&#128421;&#65039;</div>
+        <div class="pfchoice-name">Website</div>
+        <div class="pfchoice-desc">25 web projects &mdash; ERP, POS, e-commerce &amp; more</div>
+      </a>
+      <a href="#portfolio-mobile" class="pfchoice-opt" onclick="closePfChoice()">
+        <div class="pfchoice-icon">&#128241;</div>
+        <div class="pfchoice-name">Mobile</div>
+        <div class="pfchoice-desc">20 Flutter apps &mdash; Android, iOS &amp; cross-platform</div>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- SECTIONS: each container below is replaced by its own file from /sections at runtime -->
 <section id="hero" class="hero">
 <div class="hi">
@@ -169,7 +191,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     </div>
     <div class="hm">
       <div><div class="mn">3<sup>+</sup></div><div class="ml">Years Active</div></div>
-      <div><div class="mn">37<sup>+</sup></div><div class="ml">Projects Done</div></div>
+      <div><div class="mn">45<sup>+</sup></div><div class="ml">Projects Done</div></div>
       <div><div class="mn">15<sup>+</sup></div><div class="ml">Clients</div></div>
       <div><div class="mn">5<sup>+</sup></div><div class="ml">Industries</div></div>
     </div>
@@ -183,8 +205,8 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
         <div><div class="hn">Yowanda Frisky Amada</div><div class="hr">Founder &amp; Lead Developer</div><div class="hs2"><span style="width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block"></span>Open to Projects</div></div>
       </div>
       <div class="hss">
-        <div class="hsb"><div class="hsn">5+</div><div class="hsl">Years</div></div>
-        <div class="hsb"><div class="hsn">37+</div><div class="hsl">Projects</div></div>
+        <div class="hsb"><div class="hsn">7+</div><div class="hsl">Years</div></div>
+        <div class="hsb"><div class="hsn">45+</div><div class="hsl">Projects</div></div>
         <div class="hsb"><div class="hsn">3.71</div><div class="hsl">GPA</div></div>
       </div>
       <div class="htags">
@@ -199,7 +221,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 <div class="stats-b">
   <div class="stats-i">
     <div class="sbi reveal"><div class="sbn">3<sup>+</sup></div><div class="sbl">Years Active</div></div>
-    <div class="sbi reveal"><div class="sbn">37<sup>+</sup></div><div class="sbl">Projects Done</div></div>
+    <div class="sbi reveal"><div class="sbn">45<sup>+</sup></div><div class="sbl">Projects Done</div></div>
     <div class="sbi reveal"><div class="sbn">15<sup>+</sup></div><div class="sbl">Clients</div></div>
     <div class="sbi reveal"><div class="sbn">5<sup>+</sup></div><div class="sbl">Industries</div></div>
     <div class="sbi reveal"><div class="sbn">100<sup>%</sup></div><div class="sbl">Delivered</div></div>
@@ -215,7 +237,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
       <h2 class="sh">Engineering Solutions,<br>Not Just <span class="bl">Code</span></h2>
       <div class="dl"></div>
       <p class="al">MAGINTEK is a professional software house based in Surabaya &mdash; focused on building digital systems that deliver real impact for businesses.</p>
-      <p class="ab">Led by <strong>Yowanda Frisky Amada</strong>, a Full Stack &amp; Flutter Developer with hands-on experience building 37+ real-world projects: warehouse ERP, retail POS, e-commerce, mobile super apps, fleet management, company profiles, and SaaS tools for a variety of clients across Indonesia.</p>
+      <p class="ab">Led by <strong>Yowanda Frisky Amada</strong>, a Full Stack &amp; Flutter Developer with hands-on experience building 45+ real-world projects: warehouse ERP, retail POS, e-commerce, mobile super apps, fleet management, company profiles, and SaaS tools for a variety of clients across Indonesia.</p>
       <p class="ab">From architecture consulting and development to deployment and long-term maintenance &mdash; we make sure every product is ready for real business scale.</p>
       <div class="fg">
         <div class="fi"><div class="fii fib">&#9889;</div><div class="ft">Full Stack Web</div><div class="fd">Laravel, React, Next.js, Vue, TypeScript &mdash; front-end to back-end</div></div>
@@ -225,7 +247,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
       </div>
      <div class="phw">
   <div class="phb" style="cursor:default; background:linear-gradient(135deg,#1a5cff,#6c47ff)">
-    ✦ 37+ Projects Delivered &mdash; Web &amp; Mobile Solutions
+    ✦ 45+ Projects Delivered &mdash; Web &amp; Mobile Solutions
   </div>
 </div>
     </div>
@@ -237,7 +259,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
         </div>
         <div class="ir">
           <div class="irr"><span class="irl">Expertise</span><span class="irv">Full Stack + Flutter + IT Consulting</span></div>
-          <div class="irr"><span class="irl">Experience</span><span class="irv">5+ years professional</span></div>
+          <div class="irr"><span class="irl">Experience</span><span class="irv">7+ years professional</span></div>
           <!-- <div class="irr"><span class="irl">Education</span><span class="irv">D4 TI PENS &mdash; GPA 3.71/4.00</span></div> -->
           <div class="irr"><span class="irl">Email</span><span class="irv">byayoan@gmail.com</span></div>
           <div class="irr"><span class="irl">WhatsApp</span><span class="irv">0857-7813-3205</span></div>
@@ -297,7 +319,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 <div class="si">
   <div class="chip">Web Projects</div>
   <h2 class="sh">Website <span class="bl">Portfolio</span></h2>
-  <p class="ss">17 real web projects built and delivered. Click an image for full details.</p>
+  <p class="ss">25 real web projects built and delivered. Click an image for full details.</p>
   <div class="pff">
     <button class="pfb act" onclick="filterW(this,'all')">All Web</button>
     <button class="pfb" onclick="filterW(this,'system')">Systems &amp; ERP</button>
@@ -336,6 +358,80 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-client">PT Kencana Maju Bersama</div>
     <div class="pc-desc">Internal warehouse management system: stock opname digital, QR code generation & bulk PDF printing, multi-warehouse stock query, transfer tr...</div>
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">MySQL</span><span class="pt">QR Code</span><span class="pt">PDF Export</span></div>
+  </div>
+</div><div class="pc reveal" data-cat="web system" data-idx="63">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-263.jpg" alt="NCDB (National Cancer Database)" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">Healthcare Data System</span><span class="pc-live"></span></div>
+    <div class="pc-title">NCDB (National Cancer Database)</div>
+    <div class="pc-desc">A cancer registry and data management platform built to record, manage, and report oncology patient data in line with international cancer regi...</div>
+    <div class="pc-techs"><span class="pt">Express.js</span><span class="pt">React</span><span class="pt">shadcn/ui</span><span class="pt">REST API</span></div>
+  </div>
+</div><div class="pc reveal" data-cat="web design" data-idx="64">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-264.jpg" alt="Cantik Glowing" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">Beauty Salon Website</span><span class="pc-live"></span></div>
+    <div class="pc-title">Cantik Glowing</div>
+    <div class="pc-desc">A business website developed for GlowUp Beauty Salon, a premium beauty salon in Menteng, Central Jakarta, guiding visitors from browsing servi...</div>
+  </div>
+</div><div class="pc reveal" data-cat="web" data-idx="65">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-265.jpg" alt="Herbal Nusa" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">E-Commerce · Herbal Products</span><span class="pc-live"></span></div>
+    <div class="pc-title">Herbal Nusa</div>
+    <div class="pc-desc">An e-commerce website built for HerbalNusa, a brand offering natural herbal health products sourced from ingredients across Indonesia.</div>
+  </div>
+</div><div class="pc reveal" data-cat="web" data-idx="66">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-266.jpg" alt="Klinik Sehat" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">Healthcare Website</span><span class="pc-live"></span></div>
+    <div class="pc-title">Klinik Sehat</div>
+    <div class="pc-desc">A healthcare website developed for Klinik Sehat Bersama, presenting medical services, specialist doctors, and appointment booking in one place.</div>
+    <div class="pc-techs"><span class="pt">REST API</span></div>
+  </div>
+</div><div class="pc reveal" data-cat="web system" data-idx="67">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-267.jpg" alt="Sistem Bisnis" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">SME ERP System</span><span class="pc-live"></span></div>
+    <div class="pc-title">Sistem Bisnis</div>
+    <div class="pc-desc">An all-in-one ERP web application built to help Indonesian SMEs (UMKM) manage their operations from a single dashboard.</div>
+  </div>
+</div><div class="pc reveal" data-cat="web" data-idx="68">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-268.jpg" alt="Tokkoku" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">Fashion E-Commerce</span><span class="pc-live"></span></div>
+    <div class="pc-title">Tokkoku</div>
+    <div class="pc-desc">An e-commerce platform built to showcase and sell local Indonesian fashion, supporting SME (UMKM) fashion brands and local artisans.</div>
+  </div>
+</div><div class="pc reveal" data-cat="web" data-idx="69">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-269.jpg" alt="Rumah Kita" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">Property Marketplace</span><span class="pc-live"></span></div>
+    <div class="pc-title">Rumah Kita</div>
+    <div class="pc-desc">A property marketplace platform built to connect buyers, renters, sellers, and agents across Indonesia.</div>
+  </div>
+</div><div class="pc reveal" data-cat="web system" data-idx="70">
+  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-270.jpg" alt="Belajar Smart" loading="lazy">
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">E-Learning Platform</span><span class="pc-live"></span></div>
+    <div class="pc-title">Belajar Smart</div>
+    <div class="pc-desc">An online learning platform offering 500+ courses across web development, mobile design, data science, digital marketing, and foreign languages.</div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="3">
   <div class="pc-img-box"><img class="pc-img" src="assets/img/img-3.jpg" alt="iPhone Gresik POS" loading="lazy">
@@ -998,15 +1094,35 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   <p class="ss">Professional track record building digital products and leading technology teams.</p>
   <div class="exg">
     <div class="tl reveal-l">
-      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2025 &mdash; Present</div><div class="tlc">PT. Kencana Maju Bersama</div><div class="tlr">Full Stack Developer &middot; On Site</div><div class="tldesc">Building warehouse ERP (Laravel web) and Flutter mobile apps for 30+ business entities. Mobile stock opname, QR codes, multi-warehouse system, server monitoring, and ongoing maintenance.</div></div>
-      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2024 &mdash; Oct 2025</div><div class="tlc">KoffieSoft (PT. Dapur Perangkat Lunak Indonesia)</div><div class="tlr">Project Manager &middot; Full Time Hybrid</div><div class="tldesc">Leading multiple projects: Laravel/React web, Flutter mobile, and backend systems. Task assignment, backlog management, server monitoring, release coordination, and technical architecture input.</div></div>
-      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2023 &mdash; Oct 2024</div><div class="tlc">KoffieSoft (PT. Dapur Perangkat Lunak Indonesia)</div><div class="tlr">Mobile Developer &amp; UI/UX Designer &middot; Hybrid</div><div class="tldesc">Flutter apps with GetX/BLoC/Provider, REST API integration, responsive UI. Play Store deployment. Led project planning and team coordination for POS, e-commerce, and management systems.</div></div>
-      <div class="tli"><div class="tld"></div><div class="tldt">Jan 2023 &mdash; Apr 2023</div><div class="tlc">Burningroom Technology &mdash; Surabaya</div><div class="tlr">Flutter Developer &middot; Full Time Hybrid</div><div class="tldesc">Built the Starlife doctor booking application from scratch: UI/UX design, REST API integration, GetX state management, production-ready deployment.</div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2025 &mdash; Present</div><div class="tlc">PT. Kencana Maju Bersama (Viva) &mdash; Surabaya</div><div class="tlr">Full Stack Developer</div><div class="tldesc"><ul>
+        <li>Built an end-to-end warehouse ERP system (web + mobile) for 30+ business entities, covering multi-warehouse, master data, and inventory tracking.</li>
+        <li>Developed the web app with a Laravel backend and Vue.js frontend, and designed the MySQL database schema for multi-warehouse stock movements.</li>
+        <li>Built a Flutter mobile app for stock-taking with QR code scanning, connected to a REST API as the single source of truth for inventory logic and data sync.</li>
+        <li>Set up server monitoring and ongoing maintenance to keep the system available and healthy.</li>
+      </ul></div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2024 &mdash; Oct 2025</div><div class="tlc">PT. Kencana Maju Bersama (Tobang) &mdash; Surabaya</div><div class="tlr">Project Manager &middot; Full Time Hybrid</div><div class="tldesc"><ul>
+        <li>Directed mobile app, website, and system projects from planning to deployment.</li>
+        <li>Assigned tasks to developers and managed product backlogs.</li>
+        <li>Monitored server performance and checked logs to prevent issues.</li>
+        <li>Coordinated app and website releases to ensure smooth updates.</li>
+        <li>Led team meetings and tracked project progress.</li>
+      </ul></div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Sep 2024 &mdash; Jun 2026</div><div class="tlc">PT Dinergi Dimensi Informatika &mdash; Sidoarjo</div><div class="tlr">IT Developer &middot; Part Time Remote</div><div class="tldesc"><ul>
+        <li>Implemented state management React TypeScript with Redux for efficient data handling and UI updates.</li>
+        <li>Automated tasks and workflows using Power Automate, Selenium, and Playwright to increase efficiency and reduce manual work.</li>
+        <li>Handled User Guide Documentation and conducted UAT to ensure the system met user requirements and expectations.</li>
+      </ul></div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Oct 2023 &mdash; Oct 2024</div><div class="tlc">KoffieSoft (PT. Dapur Perangkat Lunak Indonesia) &mdash; Surabaya</div><div class="tlr">Mobile Developer &amp; UI/UX Designer &middot; Full Time Hybrid</div><div class="tldesc"><ul>
+        <li>Built and optimized mobile apps with REST API integration and responsive UIs.</li>
+        <li>Used GetX, Provider, and BLoC for efficient state management.</li>
+        <li>Handled app redeployment to Play Store and ensured compliance.</li>
+        <li>Led project planning, team coordination, and performance improvements.</li>
+      </ul></div></div>
     </div>
     <div class="tl reveal-r">
-      <div class="tli"><div class="tld"></div><div class="tldt">Sep 2024 &mdash; Present</div><div class="tlc">PT Dinergi Dimensi Informatika &mdash; Sidoarjo</div><div class="tlr">IT Developer &middot; Part Time Remote</div><div class="tldesc">React TypeScript + Redux for enterprise web applications. Automation with Power Automate, Selenium, and Playwright. UAT testing and user guide documentation.</div></div>
-      <div class="tli"><div class="tld"></div><div class="tldt">Mei 2023 &mdash; Feb 2025</div><div class="tlc">Tempo360 &mdash; Jakarta (Remote)</div><div class="tlr">UI/UX &amp; Design Lead &middot; Project Base</div><div class="tldesc">Design lead for the Komatsu Indonesia brand: UI/UX redesign of komatsu.co.id, SEMrush keyword research, brochures, PowerPoint decks, heavy equipment catalogs, and SEO strategy. Stakeholder presentations &amp; usability testing.</div></div>
-      <div class="tli"><div class="tld"></div><div class="tldt">Jun 2023 &mdash; Dec 2023</div><div class="tlc">Trust Medis &mdash; Surabaya (Remote)</div><div class="tlr">Flutter Developer &middot; Full Time Remote</div><div class="tldesc">Developed multiple Flutter apps, resolved production bugs on a live POS application, UI development and REST API integrations for medical and retail clients.</div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Mei 2023 &mdash; Feb 2025</div><div class="tlc">Tempo360 &mdash; Jakarta (Project Base Remote)</div><div class="tlr">UI/UX &amp; Design Lead</div><div class="tldesc">Led design projects from concept to delivery, ensuring deadlines and quality standards were met. Conducted usability testing and incorporated user feedback into designs. Presented design solutions to stakeholders and ensured alignment with brand guidelines. Managed various Komatsu projects, including brochure and PowerPoint decks, SEMrush keyword research, catalog research, website redesign (komatsu.co.id), and overseeing heavy equipment brochure redesign.</div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Jan 2023 &mdash; Apr 2023</div><div class="tlc">Burningroom Technology &mdash; Surabaya</div><div class="tlr">Flutter Developer &middot; Full Time Hybrid</div><div class="tldesc">Developed a doctor booking application from scratch, including app structure management, UI design, API integration, and state management, preparing it for deployment. Oversaw the entire development process, ensuring seamless functionality and a user-friendly interface.</div></div>
+      <div class="tli"><div class="tld"></div><div class="tldt">Jun 2023 &mdash; Dec 2023</div><div class="tlc">Trust Medis &mdash; Surabaya (Remote)</div><div class="tlr">Flutter Developer &middot; Full Time Remote</div><div class="tldesc">Developed several apps, enhancing an existing app using Flutter boilerplate and GetX for state management. Worked on resolving issues in production apps, including a POS application, and contributed to UI development and API integrations for other apps.</div></div>
       <div class="tli"><div class="tld"></div><div class="tldt">Jul 2022 &mdash; Dec 2022</div><div class="tlc">PENS Vestifal &mdash; Surabaya</div><div class="tlr">Mentor Mobile Flutter &middot; Part Time</div><div class="tldesc">Mentored 8 student teams: app architecture, problem-solving, REST API, best practices. Weekly progress reviews and technical decision making.</div></div>
     </div>
   </div>
@@ -1761,6 +1877,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
       <div class="mty" id="mType"></div>
       <div class="mcl" id="mClient"></div>
       <div class="md" id="mDesc"></div>
+      <a class="mvisit" id="mVisit" href="#" target="_blank" rel="noopener noreferrer">&#128279; Visit Website &rarr;</a>
       <div class="mte" id="mTech"></div>
       <div class="mc" id="mCount"></div>
     </div>
@@ -1773,7 +1890,6 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 <script src="js/data-imgs.js"></script>
 
 <script src="js/app.js"></script>
-
 
 <!-- Meta Pixel: WhatsApp click -> Lead -->
 <script>
