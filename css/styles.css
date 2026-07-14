@@ -288,6 +288,10 @@ h1.hh .bl{color:var(--blue)}
 .cci{display:flex;align-items:flex-start;gap:.9rem;background:var(--w);border:1px solid var(--border);border-radius:12px;padding:.95rem;transition:box-shadow .25s,border-color .25s,background-color .3s}
 .cci:hover{border-color:rgba(26,92,255,.22)}
 .ccii{width:38px;height:38px;background:var(--bl);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.cci-cv{border-color:rgba(240,153,0,.35)}
+.cci-cv:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(240,153,0,.18)}
+.cci-cv .ccii{background:linear-gradient(135deg,#f09900,#f5c300);color:#fff}
+.cci-cv .ccil{color:var(--gold)}
 .ccil{font-size:.63rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
 .cciv{font-size:.82rem;color:var(--ink2);font-weight:600}
 .cfcard{background:var(--w);border:1px solid var(--border);border-radius:18px;padding:2rem;box-shadow:var(--sh);transition:background-color .3s,border-color .3s}
