@@ -6,7 +6,7 @@ const path = require('path');
 
 const SECTIONS = [
   'hero', 'about', 'services', 'stack', 'writing',
-  'portfolio', 'portfolio-mobile', 'reviews', 'catalog', 'experience', 'contact',
+  'portfolio', 'portfolio-mobile', 'reviews', 'faq', 'catalog', 'experience', 'contact',
 ];
 
 const root = __dirname;

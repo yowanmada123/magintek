@@ -17,6 +17,22 @@ document.querySelectorAll('.theme-toggle').forEach(btn=>{
   });
 });
 
+// FAQ accordion
+function toggleFaq(btn){
+  const item = btn.closest('.faqi');
+  const answer = item.querySelector('.faqa');
+  const wasOpen = item.classList.contains('open');
+  item.closest('.faql').querySelectorAll('.faqi.open').forEach(other=>{
+    other.classList.remove('open');
+    other.querySelector('.faqa').style.maxHeight = '';
+  });
+  if(!wasOpen){
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+document.querySelectorAll('.faqi.open .faqa').forEach(a=>{ a.style.maxHeight = a.scrollHeight + 'px'; });
+
 let mIdx=0, mList=[];
 
 function openM(idx){
