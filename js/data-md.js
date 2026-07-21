@@ -509,7 +509,7 @@ const MD = [
     client: '',
     desc: 'A cancer registry and data management platform built to record, manage, and report oncology patient data in line with international cancer registry standards. Structured data entry for patient demographics, tumor characteristics, staging, and treatment, with built-in validation for data quality and compliance. Key features include standardized coding for tumor topography and morphology (ICD-O-3), cancer staging support (AJCC TNM 8th Edition), role-based access control, and secure handling of sensitive patient records, following NAACCR and STORE (ACS) technical guidelines.',
     tech: ['Express.js', 'React', 'shadcn/ui', 'REST API'],
-    url: 'https://oncoregistry.com/',
+    url: 'https://oncoregistry.com',
   },
   {
     title: 'Cantik Glowing',
@@ -517,7 +517,7 @@ const MD = [
     client: '',
     desc: 'A business website developed for GlowUp Beauty Salon, a premium beauty salon in Menteng, Central Jakarta. The website serves as a digital storefront showcasing hair treatment, nail art, skincare, and makeup services, guiding visitors from browsing to booking appointments online. Core sections include a service catalog, before-and-after transformation gallery, team profiles, appointment booking flow, and location/contact info, with social proof through client ratings (4.9 from 1,240 reviews).',
     tech: [],
-    url: 'https://cantikglowing.netlify.app/contact',
+    url: 'https://cantikglowing.netlify.app',
   },
   {
     title: 'Herbal Nusa',
