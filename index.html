@@ -3,15 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<script>
-(function(){
-  try{
-    var stored = localStorage.getItem('mgt-theme');
-    var theme = (stored === 'light' || stored === 'dark') ? stored : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-  }catch(e){}
-})();
-</script>
+<script>!function(){try{var t=localStorage.getItem("mgt-theme"),e="light"===t||"dark"===t?t:"dark";document.documentElement.setAttribute("data-theme",e)}catch(t){}}();</script>
 <title>MAGINTEK — IT Consulting & Software Development | Surabaya</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 <link rel="alternate icon" href="assets/favicon.svg?v=2">
@@ -38,22 +30,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.min.css?v=7988ac6d1e">
 <meta name="facebook-domain-verification" content="jvu3301bm00mwno7uzwyenantezo1x" />
 
 <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1042496984842549');
-fbq('track', 'PageView');
-</script>
+<script>!function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","1042496984842549"),fbq("track","PageView");</script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel Code -->
@@ -192,9 +173,10 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 </div>
 
 <!-- SECTIONS: each container below is replaced by its own file from /sections at runtime -->
+<main id="main">
 <section id="hero" class="hero">
 <div class="hi">
-  <div class="reveal-l">
+  <div>
     <div class="hero-chip"><span class="pulse"></span>Available for Projects &mdash; Surabaya, Indonesia</div>
     <h1 class="hh">Build Smarter.<br><span class="bl">Digital Solutions</span> That Scale.</h1>
     <p class="hs">MAGINTEK delivers production-ready full-stack web solutions, Flutter mobile apps, and IT consulting &mdash; built for real operational efficiency and long-term business growth.</p>
@@ -211,7 +193,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
       <div><div class="mn">5<sup>+</sup></div><div class="ml">Industries</div></div>
     </div>
   </div>
-  <div class="hcv reveal-r">
+  <div class="hcv">
     <div class="fc" style="animation-duration:5s"><span class="fcd" style="background:#22c55e"></span>Project Live &mdash; KMB System</div>
     <div class="fc" style="animation-duration:7s;animation-delay:-2.5s"><span class="fcd" style="background:var(--blue)"></span>Flutter + Laravel</div>
     <div class="hcard">
@@ -269,7 +251,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="reveal-r">
       <div class="pcard">
         <div class="pct">
-          <div class="pca"><img src="assets/img/photo-yfa.jpeg" alt="Yowanda Frisky Amada" loading="lazy"></div>
+          <div class="pca"><picture><source srcset="assets/img/photo-yfa.webp" type="image/webp"><img src="assets/img/photo-yfa.jpeg" alt="Yowanda Frisky Amada" loading="lazy"></picture></div>
           <div><div class="pcn">Yowanda Frisky Amada</div><div class="pcr">Founder &amp; Lead Developer</div><div class="pcl">&#128205; Surabaya, East Java, Indonesia</div></div>
         </div>
         <div class="ir">
@@ -335,7 +317,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <button class="pfb" onclick="filterW(this,'design')">Design &amp; UI/UX</button>
   </div>
   <div class="pfg" id="wGrid"><div class="pc reveal" data-cat="web design" data-idx="0">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-0.jpg" alt="komatsu.co.id" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-0.webp" type="image/webp"><img class="pc-img" src="assets/img/img-0.jpg" alt="komatsu.co.id" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -346,7 +328,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">ASP.NET</span><span class="pt">jQuery</span><span class="pt">IIS</span><span class="pt">SEO</span><span class="pt">UI/UX</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="1">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-1.jpg" alt="kencana.org" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-1.webp" type="image/webp"><img class="pc-img" src="assets/img/img-1.jpg" alt="kencana.org" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -357,7 +339,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">MySQL</span><span class="pt">REST API</span><span class="pt">RBAC</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="2">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-2.jpg" alt="viva.kencana.org" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-2.webp" type="image/webp"><img class="pc-img" src="assets/img/img-2.jpg" alt="viva.kencana.org" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -368,7 +350,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">MySQL</span><span class="pt">QR Code</span><span class="pt">PDF Export</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="63">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-263.jpg" alt="NCDB (National Cancer Database)" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-263.webp" type="image/webp"><img class="pc-img" src="assets/img/img-263.jpg" alt="NCDB (National Cancer Database)" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -378,7 +360,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Express.js</span><span class="pt">React</span><span class="pt">shadcn/ui</span><span class="pt">REST API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web design" data-idx="64">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-264.jpg" alt="Cantik Glowing" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-264.webp" type="image/webp"><img class="pc-img" src="assets/img/img-264.jpg" alt="Cantik Glowing" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -387,7 +369,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">A business website developed for GlowUp Beauty Salon, a premium beauty salon in Menteng, Central Jakarta, guiding visitors from browsing servi...</div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="65">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-265.jpg" alt="Herbal Nusa" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-265.webp" type="image/webp"><img class="pc-img" src="assets/img/img-265.jpg" alt="Herbal Nusa" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -396,7 +378,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">An e-commerce website built for HerbalNusa, a brand offering natural herbal health products sourced from ingredients across Indonesia.</div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="66">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-266.jpg" alt="Klinik Sehat" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-266.webp" type="image/webp"><img class="pc-img" src="assets/img/img-266.jpg" alt="Klinik Sehat" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -406,7 +388,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">REST API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="67">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-267.jpg" alt="Sistem Bisnis" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-267.webp" type="image/webp"><img class="pc-img" src="assets/img/img-267.jpg" alt="Sistem Bisnis" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -415,7 +397,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">An all-in-one ERP web application built to help Indonesian SMEs (UMKM) manage their operations from a single dashboard.</div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="68">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-268.jpg" alt="Tokkoku" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-268.webp" type="image/webp"><img class="pc-img" src="assets/img/img-268.jpg" alt="Tokkoku" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -424,7 +406,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">An e-commerce platform built to showcase and sell local Indonesian fashion, supporting SME (UMKM) fashion brands and local artisans.</div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="69">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-269.jpg" alt="Rumah Kita" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-269.webp" type="image/webp"><img class="pc-img" src="assets/img/img-269.jpg" alt="Rumah Kita" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -433,7 +415,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">A property marketplace platform built to connect buyers, renters, sellers, and agents across Indonesia.</div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="70">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-270.jpg" alt="Belajar Smart" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-270.webp" type="image/webp"><img class="pc-img" src="assets/img/img-270.jpg" alt="Belajar Smart" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -442,7 +424,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-desc">An online learning platform offering 500+ courses across web development, mobile design, data science, digital marketing, and foreign languages.</div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="3">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-3.jpg" alt="iPhone Gresik POS" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-3.webp" type="image/webp"><img class="pc-img" src="assets/img/img-3.jpg" alt="iPhone Gresik POS" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -453,7 +435,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">POS</span><span class="pt">RBAC</span><span class="pt">Reporting</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="4">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-4.jpg" alt="DAT Indonesia" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-4.webp" type="image/webp"><img class="pc-img" src="assets/img/img-4.jpg" alt="DAT Indonesia" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -464,7 +446,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">MidTrans</span><span class="pt">RajaOngkir</span><span class="pt">CMS</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web mobile" data-idx="5">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-5.jpg" alt="GAPULO" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-5.webp" type="image/webp"><img class="pc-img" src="assets/img/img-5.jpg" alt="GAPULO" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -475,7 +457,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Custom Views</span><span class="pt">Chatbot</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="6">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-6.jpg" alt="All In One Phone" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-6.webp" type="image/webp"><img class="pc-img" src="assets/img/img-6.jpg" alt="All In One Phone" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -486,7 +468,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">REST API</span><span class="pt">MySQL</span><span class="pt">Chart.js</span><span class="pt">WebSocket</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="7">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-7.jpg" alt="CEGEH NGODING" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-7.webp" type="image/webp"><img class="pc-img" src="assets/img/img-7.jpg" alt="CEGEH NGODING" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -497,7 +479,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">SaaS</span><span class="pt">Code Gen</span><span class="pt">MySQL</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="8">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-8.jpg" alt="Friend Chart Clothing" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-8.webp" type="image/webp"><img class="pc-img" src="assets/img/img-8.jpg" alt="Friend Chart Clothing" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -508,7 +490,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">E-Commerce</span><span class="pt">Inventory</span><span class="pt">Chart.js</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="9">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-9.jpg" alt="Part Laptop Second" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-9.webp" type="image/webp"><img class="pc-img" src="assets/img/img-9.jpg" alt="Part Laptop Second" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -519,7 +501,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">POS</span><span class="pt">HR</span><span class="pt">Payroll</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="10">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-10.jpg" alt="Sinergi Gula Nusantara" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-10.webp" type="image/webp"><img class="pc-img" src="assets/img/img-10.jpg" alt="Sinergi Gula Nusantara" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -530,7 +512,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">MySQL</span><span class="pt">Enterprise</span><span class="pt">RBAC</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="11">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-11.jpg" alt="DTMS Web" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-11.webp" type="image/webp"><img class="pc-img" src="assets/img/img-11.jpg" alt="DTMS Web" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -541,7 +523,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">Vue.js</span><span class="pt">MySQL</span><span class="pt">Real-time</span><span class="pt">Multi-role</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="12">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-12.jpg" alt="X3 Organizer" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-12.webp" type="image/webp"><img class="pc-img" src="assets/img/img-12.jpg" alt="X3 Organizer" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -552,7 +534,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">Landing Page</span><span class="pt">Travel</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="13">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-13.jpg" alt="Laracamp" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-13.webp" type="image/webp"><img class="pc-img" src="assets/img/img-13.jpg" alt="Laracamp" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -563,7 +545,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">Midtrans</span><span class="pt">Docker</span><span class="pt">E-Learning</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="14">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-14.jpg" alt="Radja Kompor" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-14.webp" type="image/webp"><img class="pc-img" src="assets/img/img-14.jpg" alt="Radja Kompor" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -574,7 +556,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">Midtrans</span><span class="pt">Docker</span><span class="pt">E-Commerce</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web system" data-idx="15">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-15.jpg" alt="SIPINBAR" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-15.webp" type="image/webp"><img class="pc-img" src="assets/img/img-15.jpg" alt="SIPINBAR" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -585,7 +567,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Laravel</span><span class="pt">MySQL</span><span class="pt">Campus System</span><span class="pt">PDF</span><span class="pt">Asset Management</span></div>
   </div>
 </div><div class="pc reveal" data-cat="web" data-idx="16">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-16.jpg" alt="Posyandu Online" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-16.webp" type="image/webp"><img class="pc-img" src="assets/img/img-16.jpg" alt="Posyandu Online" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -612,7 +594,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <button class="pfb" onclick="filterM(this,'social')">Social &amp; Health</button>
   </div>
   <div class="pfg" id="mGrid"><div class="pc reveal" data-cat="mobile" data-idx="17">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-17.jpg" alt="Viva Attendance" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-17.webp" type="image/webp"><img class="pc-img" src="assets/img/img-17.jpg" alt="Viva Attendance" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -623,7 +605,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">BLoC</span><span class="pt">Face Recognition</span><span class="pt">Geofencing</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="18">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-18.jpg" alt="Viva Kencana Apps" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-18.webp" type="image/webp"><img class="pc-img" src="assets/img/img-18.jpg" alt="Viva Kencana Apps" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -634,7 +616,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">BLoC</span><span class="pt">QR Code</span><span class="pt">HTTP API</span><span class="pt">Multi-entity</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="19">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-19.jpg" alt="Viva Kencana Ekspedisi" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-19.webp" type="image/webp"><img class="pc-img" src="assets/img/img-19.jpg" alt="Viva Kencana Ekspedisi" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -645,7 +627,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">BLoC</span><span class="pt">SharedPreferences</span><span class="pt">HTTP API</span><span class="pt">Fleet</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="20">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-20.jpg" alt="Fasindo" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-20.webp" type="image/webp"><img class="pc-img" src="assets/img/img-20.jpg" alt="Fasindo" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -656,7 +638,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">BLoC</span><span class="pt">flutter_map</span><span class="pt">Geolocator</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="21">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-21.jpg" alt="TOBANG" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-21.webp" type="image/webp"><img class="pc-img" src="assets/img/img-21.jpg" alt="TOBANG" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -667,7 +649,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Firebase</span><span class="pt">Google Maps</span><span class="pt">Indodana</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="22">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-22.jpg" alt="Fake Go-Send" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-22.webp" type="image/webp"><img class="pc-img" src="assets/img/img-22.jpg" alt="Fake Go-Send" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -678,7 +660,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">OpenStreetMap</span><span class="pt">Sqflite</span><span class="pt">Geolocator</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="23">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-23.jpg" alt="Starlife" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-23.webp" type="image/webp"><img class="pc-img" src="assets/img/img-23.jpg" alt="Starlife" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -689,7 +671,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">MidTrans</span><span class="pt">Dio</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="24">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-24.jpg" alt="SOFA App" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-24.webp" type="image/webp"><img class="pc-img" src="assets/img/img-24.jpg" alt="SOFA App" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -700,7 +682,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">GraphQL</span><span class="pt">Convert PDF</span><span class="pt">Printer</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="25">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-25.jpg" alt="Shoesmart" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-25.webp" type="image/webp"><img class="pc-img" src="assets/img/img-25.jpg" alt="Shoesmart" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -711,7 +693,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">MidTrans</span><span class="pt">Firebase FCM</span><span class="pt">Dio</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="26">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-26.jpg" alt="DTMS V2" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-26.webp" type="image/webp"><img class="pc-img" src="assets/img/img-26.jpg" alt="DTMS V2" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -722,7 +704,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">BLoC</span><span class="pt">gRPC</span><span class="pt">Sqflite</span><span class="pt">OpenRouteMap</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="27">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-27.jpg" alt="GUNMA" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-27.webp" type="image/webp"><img class="pc-img" src="assets/img/img-27.jpg" alt="GUNMA" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -733,7 +715,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Dio</span><span class="pt">SharedPreferences</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="28">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-28.jpg" alt="Ambroise" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-28.webp" type="image/webp"><img class="pc-img" src="assets/img/img-28.jpg" alt="Ambroise" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -744,7 +726,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Android Kotlin</span><span class="pt">MVVM</span><span class="pt">SparkAR</span><span class="pt">MidTrans</span><span class="pt">Retrofit</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="29">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-29.jpg" alt="PEDULY" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-29.webp" type="image/webp"><img class="pc-img" src="assets/img/img-29.jpg" alt="PEDULY" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -755,7 +737,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">Provider</span><span class="pt">MidTrans</span><span class="pt">SharedPreferences</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="30">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-30.jpg" alt="ONE EVENT" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-30.webp" type="image/webp"><img class="pc-img" src="assets/img/img-30.jpg" alt="ONE EVENT" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -766,7 +748,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">GraphQL</span><span class="pt">MidTrans</span><span class="pt">Dio</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="31">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-31.jpg" alt="DOCTUGO" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-31.webp" type="image/webp"><img class="pc-img" src="assets/img/img-31.jpg" alt="DOCTUGO" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -777,7 +759,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Custom Views</span><span class="pt">Custom Widgets</span><span class="pt">Clean Architecture</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="32">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-32.jpg" alt="RESTOBOOKING" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-32.webp" type="image/webp"><img class="pc-img" src="assets/img/img-32.jpg" alt="RESTOBOOKING" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -788,7 +770,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Custom Views</span><span class="pt">Custom Widgets</span><span class="pt">Maps</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="33">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-33.jpg" alt="KALPATARU" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-33.webp" type="image/webp"><img class="pc-img" src="assets/img/img-33.jpg" alt="KALPATARU" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -799,7 +781,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Custom Widgets</span><span class="pt">HTTP API</span><span class="pt">SharedPreferences</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="34">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-34.jpg" alt="TAGBETA" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-34.webp" type="image/webp"><img class="pc-img" src="assets/img/img-34.jpg" alt="TAGBETA" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -810,7 +792,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Google Maps</span><span class="pt">Geolocator</span><span class="pt">HTTP API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="35">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-35.jpg" alt="PMovie" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-35.webp" type="image/webp"><img class="pc-img" src="assets/img/img-35.jpg" alt="PMovie" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -821,7 +803,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-techs"><span class="pt">Flutter</span><span class="pt">GetX</span><span class="pt">Custom Views</span><span class="pt">HTTP API</span><span class="pt">TMDB API</span></div>
   </div>
 </div><div class="pc reveal" data-cat="mobile" data-idx="36">
-  <div class="pc-img-box"><img class="pc-img" src="assets/img/img-36.jpg" alt="You Agency" loading="lazy">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-36.webp" type="image/webp"><img class="pc-img" src="assets/img/img-36.jpg" alt="You Agency" loading="lazy"></picture>
     <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
   </div>
   <div class="pc-body">
@@ -844,134 +826,134 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   <p class="ss">A visual showcase of all our projects. Click to see the details.</p>
   <h3 style="font-size:1rem;font-weight:700;color:var(--ink2);margin-bottom:1.5rem;letter-spacing:-.2px">&#127760; Website Projects</h3>
   <div class="catg" style="margin-bottom:3rem"><div class="cc reveal" data-idx="37">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-37.jpg" alt="komatsu.co.id Redesign" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-37.webp" type="image/webp"><img class="cc-img" src="assets/img/img-37.jpg" alt="komatsu.co.id Redesign" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">komatsu.co.id Redesign</div><div class="cc-s">Corporate Website · SEO · UI/UX</div></div>
 </div><div class="cc reveal" data-idx="38">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-38.jpg" alt="Kencana ERP System" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-38.webp" type="image/webp"><img class="cc-img" src="assets/img/img-38.jpg" alt="Kencana ERP System" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Kencana ERP System</div><div class="cc-s">Enterprise · 30+ Business Entities</div></div>
 </div><div class="cc reveal" data-idx="39">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-39.jpg" alt="Viva Kencana Warehouse" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-39.webp" type="image/webp"><img class="cc-img" src="assets/img/img-39.jpg" alt="Viva Kencana Warehouse" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Viva Kencana Warehouse</div><div class="cc-s">Warehouse · QR Code · Stock Opname</div></div>
 </div><div class="cc reveal" data-idx="40">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-40.jpg" alt="iPhone Gresik POS" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-40.webp" type="image/webp"><img class="cc-img" src="assets/img/img-40.jpg" alt="iPhone Gresik POS" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">iPhone Gresik POS</div><div class="cc-s">Point of Sale · Inventory · Retail</div></div>
 </div><div class="cc reveal" data-idx="41">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-41.jpg" alt="DAT Indonesia E-Commerce" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-41.webp" type="image/webp"><img class="cc-img" src="assets/img/img-41.jpg" alt="DAT Indonesia E-Commerce" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">DAT Indonesia E-Commerce</div><div class="cc-s">Audio Products · MidTrans · RajaOngkir</div></div>
 </div><div class="cc reveal" data-idx="42">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-42.jpg" alt="GAPULO Tourism Platform" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-42.webp" type="image/webp"><img class="cc-img" src="assets/img/img-42.jpg" alt="GAPULO Tourism Platform" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">GAPULO Tourism Platform</div><div class="cc-s">Lombok Gastronomy · Ministry RI</div></div>
 </div><div class="cc reveal" data-idx="43">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-43.jpg" alt="Cegeh Ngoding SaaS" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-43.webp" type="image/webp"><img class="cc-img" src="assets/img/img-43.jpg" alt="Cegeh Ngoding SaaS" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Cegeh Ngoding SaaS</div><div class="cc-s">Laravel Code Generator · Multi-framework</div></div>
 </div><div class="cc reveal" data-idx="44">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-44.jpg" alt="Friend Chart Clothing ERP" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-44.webp" type="image/webp"><img class="cc-img" src="assets/img/img-44.jpg" alt="Friend Chart Clothing ERP" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Friend Chart Clothing ERP</div><div class="cc-s">Garment · ERP · E-Commerce</div></div>
 </div><div class="cc reveal" data-idx="45">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-45.jpg" alt="Part Laptop Second System" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-45.webp" type="image/webp"><img class="cc-img" src="assets/img/img-45.jpg" alt="Part Laptop Second System" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Part Laptop Second System</div><div class="cc-s">Service · POS · HR · Payroll</div></div>
 </div></div>
   <h3 style="font-size:1rem;font-weight:700;color:var(--ink2);margin-bottom:1.5rem;letter-spacing:-.2px">&#128241; Mobile App Projects</h3>
   <div class="catg"><div class="cc reveal" data-idx="46">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-46.jpg" alt="Viva Attendance" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-46.webp" type="image/webp"><img class="cc-img" src="assets/img/img-46.jpg" alt="Viva Attendance" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Viva Attendance</div><div class="cc-s">Face Recognition · Geofencing · Flutter</div></div>
 </div><div class="cc reveal" data-idx="47">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-47.jpg" alt="Viva Kencana Apps" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-47.webp" type="image/webp"><img class="cc-img" src="assets/img/img-47.jpg" alt="Viva Kencana Apps" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Viva Kencana Apps</div><div class="cc-s">Super App · QR Code · Multi-entity</div></div>
 </div><div class="cc reveal" data-idx="48">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-48.jpg" alt="Viva Kencana Ekspedisi" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-48.webp" type="image/webp"><img class="cc-img" src="assets/img/img-48.jpg" alt="Viva Kencana Ekspedisi" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Viva Kencana Ekspedisi</div><div class="cc-s">Fleet Monitoring · Real-time</div></div>
 </div><div class="cc reveal" data-idx="49">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-49.jpg" alt="Fasindo Property" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-49.webp" type="image/webp"><img class="cc-img" src="assets/img/img-49.jpg" alt="Fasindo Property" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Fasindo Property</div><div class="cc-s">Super App · Site Map · Approval</div></div>
 </div><div class="cc reveal" data-idx="50">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-50.jpg" alt="TOBANG E-Commerce" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-50.webp" type="image/webp"><img class="cc-img" src="assets/img/img-50.jpg" alt="TOBANG E-Commerce" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">TOBANG E-Commerce</div><div class="cc-s">Construction Materials · Firebase</div></div>
 </div><div class="cc reveal" data-idx="51">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-51.jpg" alt="Fake Go-Send Delivery" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-51.webp" type="image/webp"><img class="cc-img" src="assets/img/img-51.jpg" alt="Fake Go-Send Delivery" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Fake Go-Send Delivery</div><div class="cc-s">OpenStreetMap · Sqflite · GetX</div></div>
 </div><div class="cc reveal" data-idx="52">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-52.jpg" alt="Starlife Doctor Booking" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-52.webp" type="image/webp"><img class="cc-img" src="assets/img/img-52.jpg" alt="Starlife Doctor Booking" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Starlife Doctor Booking</div><div class="cc-s">Healthcare · MidTrans · GetX</div></div>
 </div><div class="cc reveal" data-idx="53">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-53.jpg" alt="SOFA Store Management" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-53.webp" type="image/webp"><img class="cc-img" src="assets/img/img-53.jpg" alt="SOFA Store Management" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">SOFA Store Management</div><div class="cc-s">POS · GraphQL · PDF Print</div></div>
 </div><div class="cc reveal" data-idx="54">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-54.jpg" alt="Shoesmart E-Commerce" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-54.webp" type="image/webp"><img class="cc-img" src="assets/img/img-54.jpg" alt="Shoesmart E-Commerce" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Shoesmart E-Commerce</div><div class="cc-s">Footwear · MidTrans · GetX</div></div>
 </div><div class="cc reveal" data-idx="55">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-55.jpg" alt="DTMS V2 Fleet" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-55.webp" type="image/webp"><img class="cc-img" src="assets/img/img-55.jpg" alt="DTMS V2 Fleet" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">DTMS V2 Fleet</div><div class="cc-s">Petrokimia Gresik · BLoC · gRPC</div></div>
 </div><div class="cc reveal" data-idx="56">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-56.jpg" alt="GUNMA Internship App" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-56.webp" type="image/webp"><img class="cc-img" src="assets/img/img-56.jpg" alt="GUNMA Internship App" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">GUNMA Internship App</div><div class="cc-s">Campus · Scholarships · Flutter</div></div>
 </div><div class="cc reveal" data-idx="57">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-57.jpg" alt="Ambroise Barbershop" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-57.webp" type="image/webp"><img class="cc-img" src="assets/img/img-57.jpg" alt="Ambroise Barbershop" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">Ambroise Barbershop</div><div class="cc-s">AR Hairstyle · Kotlin · MVVM</div></div>
 </div><div class="cc reveal" data-idx="58">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-58.jpg" alt="PEDULY Crowdfunding" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-58.webp" type="image/webp"><img class="cc-img" src="assets/img/img-58.jpg" alt="PEDULY Crowdfunding" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">PEDULY Crowdfunding</div><div class="cc-s">Social Impact · MidTrans · Flutter</div></div>
 </div><div class="cc reveal" data-idx="59">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-59.jpg" alt="ONE EVENT Sports" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-59.webp" type="image/webp"><img class="cc-img" src="assets/img/img-59.jpg" alt="ONE EVENT Sports" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">ONE EVENT Sports</div><div class="cc-s">Field Booking · Tournament · GetX</div></div>
 </div><div class="cc reveal" data-idx="60">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-60.jpg" alt="DOCTUGO Doctor App" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-60.webp" type="image/webp"><img class="cc-img" src="assets/img/img-60.jpg" alt="DOCTUGO Doctor App" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">DOCTUGO Doctor App</div><div class="cc-s">Booking · Queue System · Flutter</div></div>
 </div><div class="cc reveal" data-idx="61">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-61.jpg" alt="KALPATARU Election" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-61.webp" type="image/webp"><img class="cc-img" src="assets/img/img-61.jpg" alt="KALPATARU Election" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">KALPATARU Election</div><div class="cc-s">TPS Monitoring · Real-time Votes</div></div>
 </div><div class="cc reveal" data-idx="62">
-  <div class="cc-img-box"><img class="cc-img" src="assets/img/img-62.jpg" alt="TAGBETA Community" loading="lazy">
+  <div class="cc-img-box"><picture><source srcset="assets/img/img-62.webp" type="image/webp"><img class="cc-img" src="assets/img/img-62.jpg" alt="TAGBETA Community" loading="lazy"></picture>
     <div class="cc-overlay">&#128269;</div>
   </div>
   <div class="cc-body"><div class="cc-t">TAGBETA Community</div><div class="cc-s">Incident Reporting · Google Maps</div></div>
@@ -1032,47 +1014,47 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   <h3 style="font-size:1rem;font-weight:700;color:var(--ink2);margin-bottom:1.5rem;letter-spacing:-.2px">&#128221; Writing &amp; Research Samples</h3>
   <div class="catg" id="writingGrid">
     <div class="cc reveal" onclick="wOpen(0)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/ideallife-cover.jpg" alt="idealLife — Research Paper" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/ideallife-cover.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/ideallife-cover.jpg" alt="idealLife — Research Paper" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">idealLife — Research Paper</div><div class="cc-s">Academic Writing &middot; Covid-19 Response App Concept</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(1)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/ideallife-hoax.jpg" alt="idealLife — Misinformation Analysis" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/ideallife-hoax.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/ideallife-hoax.jpg" alt="idealLife — Misinformation Analysis" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">idealLife — Misinformation Analysis</div><div class="cc-s">Background &amp; Problem Statement</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(2)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/idealife-aplikasi.jpg" alt="idealLife — Application Concept" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/idealife-aplikasi.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/idealife-aplikasi.jpg" alt="idealLife — Application Concept" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">idealLife — Application Concept</div><div class="cc-s">Feature Design &amp; Stakeholder Mapping</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(3)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/ideallife-references.jpg" alt="idealLife — Bibliography" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/ideallife-references.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/ideallife-references.jpg" alt="idealLife — Bibliography" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">idealLife — Bibliography</div><div class="cc-s">Academic References &amp; Citations</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(4)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/aba-paper-abstract.jpg" alt="ABA — Research Paper Abstract" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/aba-paper-abstract.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/aba-paper-abstract.jpg" alt="ABA — Research Paper Abstract" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">ABA — Research Paper</div><div class="cc-s">Abstract (EN &amp; ID) &middot; Mobile Learning App</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(5)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/aba-paper-intro.jpg" alt="ABA — Introduction & Literature Review" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/aba-paper-intro.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/aba-paper-intro.jpg" alt="ABA — Introduction & Literature Review" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">ABA — Introduction &amp; Literature Review</div><div class="cc-s">Structured Academic Writing</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(6)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/pkmgt-konstruksi.jpg" alt="SAVAPROTRICAL — Proposal Diagram" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/pkmgt-konstruksi.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/pkmgt-konstruksi.jpg" alt="SAVAPROTRICAL — Proposal Diagram" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">SAVAPROTRICAL Proposal</div><div class="cc-s">Concept Diagram &amp; Technical Explanation</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(7)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/savaprotrical-diagram.jpg" alt="SAVAPROTRICAL — Construction Renders" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/savaprotrical-diagram.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/savaprotrical-diagram.jpg" alt="SAVAPROTRICAL — Construction Renders" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">SAVAPROTRICAL Proposal</div><div class="cc-s">Construction Concept &amp; Visualization</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(8)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/metnum-cover.jpg" alt="Numerical Methods — Coursework Report" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/metnum-cover.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/metnum-cover.jpg" alt="Numerical Methods — Coursework Report" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">Numerical Methods Report</div><div class="cc-s">Technical Documentation &amp; Coursework</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(9)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/metnum-soal.jpg" alt="Numerical Methods — Worked Example" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/metnum-soal.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/metnum-soal.jpg" alt="Numerical Methods — Worked Example" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">Numerical Methods — Worked Example</div><div class="cc-s">Problem Breakdown &amp; Step-by-Step Solution</div></div>
     </div>
     <div class="cc reveal" onclick="wOpen(10)">
-      <div class="cc-img-box"><img class="cc-img" src="assets/img/writing/biodata-anggota.jpg" alt="Team Member Profile — Proposal Document" loading="lazy"></div>
+      <div class="cc-img-box"><picture><source srcset="assets/img/writing/biodata-anggota.webp" type="image/webp"><img class="cc-img" src="assets/img/writing/biodata-anggota.jpg" alt="Team Member Profile — Proposal Document" loading="lazy"></picture></div>
       <div class="cc-body"><div class="cc-t">Team Profile Documentation</div><div class="cc-s">Structured Proposal Writing</div></div>
     </div>
   </div>
@@ -1187,643 +1169,9 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   </div>
 </section>
 
-<style>
-  /* ===== REVIEWS SECTION ===== */
-  .reviews-section {
-    padding: 100px 0 80px;
-    background: var(--off);
-    position: relative;
-    transition: background-color .3s;
-  }
+<style>.reviews-section{padding:100px 0 80px;background:var(--off);position:relative;transition:background-color .3s}.reviews-container{max-width:1200px;margin:0 auto;padding:0 24px}.reviews-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:52px}.reviews-eyebrow{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4285f4;margin:0 0 10px}.reviews-title{font-size:2.4rem;font-weight:800;color:var(--ink);margin:0 0 10px;line-height:1.2}.reviews-subtitle{font-size:1rem;color:var(--muted);margin:0}.reviews-aggregate{text-align:center;background:var(--w);border:1px solid var(--border);border-radius:16px;padding:24px 32px;box-shadow:var(--sh);flex-shrink:0;transition:background-color .3s,border-color .3s}.aggregate-score{font-size:3.2rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:6px}.aggregate-stars{font-size:1.4rem;color:#fbbc05;letter-spacing:2px;margin-bottom:6px}.aggregate-count{font-size:.8rem;color:var(--muted2);margin-bottom:12px}.aggregate-logo{font-size:.85rem;color:var(--muted);font-weight:500;display:flex;align-items:center;justify-content:center;gap:5px}.g-logo{font-size:1rem;font-weight:700;letter-spacing:-.5px}.reviews-carousel-wrapper{position:relative;display:flex;align-items:center;gap:12px}.reviews-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:12px 4px;flex:1;cursor:grab;user-select:none}.reviews-carousel::-webkit-scrollbar{display:none}.reviews-carousel.dragging{cursor:grabbing;scroll-snap-type:none}.reviews-carousel.dragging .review-card{pointer-events:none}.carousel-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--w);font-size:1.6rem;color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);transition:.2s;flex-shrink:0;line-height:1;padding-bottom:2px}.carousel-btn:hover{background:#4285f4;color:#fff;border-color:#4285f4;box-shadow:0 4px 16px rgba(66,133,244,.3)}.review-card{background:var(--w);border-radius:16px;border:1px solid var(--border);padding:24px;min-width:320px;max-width:320px;scroll-snap-align:start;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s,background-color .3s,border-color .3s;display:flex;flex-direction:column;gap:16px}.review-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);transform:translateY(-3px)}.review-card-header{display:flex;align-items:center;justify-content:space-between;gap:12px}.review-card-author{display:flex;align-items:center;gap:12px;min-width:0}.author-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem;flex-shrink:0;text-transform:uppercase}.author-details{min-width:0}.author-name{font-size:.9rem;font-weight:700;color:var(--ink);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.author-meta{font-size:.75rem;color:var(--muted);margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.google-g{font-size:1.3rem;font-weight:900;font-family:'Google Sans',Arial,sans-serif;color:#4285f4;flex-shrink:0;opacity:.7}.review-card-rating{display:flex;align-items:center;gap:8px}.rating-stars{display:flex;gap:2px}.rating-stars span{font-size:1rem}.star-filled{color:#fbbc05}.star-empty{color:var(--border2)}.review-date{font-size:.75rem;color:var(--muted2);font-weight:400}.review-text{font-size:.88rem;line-height:1.65;color:var(--ink2);margin:0;flex-grow:1}.review-project-tag{display:inline-flex;align-items:center;gap:6px;background:var(--light);border-radius:6px;padding:6px 10px;font-size:.75rem;color:var(--muted);font-weight:500;width:fit-content}.review-project-tag::before{content:'🔧';font-size:.75rem}.review-card-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.review-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,var(--bl),var(--gel));border:1px solid var(--border2);border-radius:6px;padding:5px 10px;font-size:.72rem;color:var(--blue);font-weight:600;white-space:nowrap}.carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}.carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);border:none;cursor:pointer;transition:.2s;padding:0}.carousel-dot.active{background:#4285f4;width:24px;border-radius:4px}@media (max-width:768px){.reviews-section{padding:60px 0 50px}.reviews-header{flex-direction:column;align-items:flex-start;gap:24px}.reviews-title{font-size:1.8rem}.reviews-aggregate{width:100%}.review-card{min-width:280px;max-width:280px}.carousel-btn{display:none}}</style>
 
-  .reviews-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ===== HEADER ===== */
-  .reviews-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 52px;
-  }
-
-  .reviews-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #4285f4;
-    margin: 0 0 10px;
-  }
-
-  .reviews-title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: var(--ink);
-    margin: 0 0 10px;
-    line-height: 1.2;
-  }
-
-  .reviews-subtitle {
-    font-size: 1rem;
-    color: var(--muted);
-    margin: 0;
-  }
-
-  /* Aggregate score block */
-  .reviews-aggregate {
-    text-align: center;
-    background: var(--w);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 32px;
-    box-shadow: var(--sh);
-    flex-shrink: 0;
-    transition: background-color .3s, border-color .3s;
-  }
-
-  .aggregate-score {
-    font-size: 3.2rem;
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .aggregate-stars {
-    font-size: 1.4rem;
-    color: #fbbc05;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
-  }
-
-  .aggregate-count {
-    font-size: 0.8rem;
-    color: var(--muted2);
-    margin-bottom: 12px;
-  }
-
-  .aggregate-logo {
-    font-size: 0.85rem;
-    color: var(--muted);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  .g-logo {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
-
-  /* ===== CAROUSEL ===== */
-  .reviews-carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .reviews-carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 12px 4px;
-    flex: 1;
-    cursor: grab;
-    user-select: none;
-  }
-
-  .reviews-carousel::-webkit-scrollbar { display: none; }
-  .reviews-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
-  .reviews-carousel.dragging .review-card { pointer-events: none; }
-
-  .carousel-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--w);
-    font-size: 1.6rem;
-    color: var(--ink2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--sh);
-    transition: all 0.2s;
-    flex-shrink: 0;
-    line-height: 1;
-    padding-bottom: 2px;
-  }
-
-  .carousel-btn:hover {
-    background: #4285f4;
-    color: white;
-    border-color: #4285f4;
-    box-shadow: 0 4px 16px rgba(66,133,244,0.3);
-  }
-
-  /* ===== REVIEW CARD (Google style) ===== */
-  .review-card {
-    background: var(--w);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    padding: 24px;
-    min-width: 320px;
-    max-width: 320px;
-    scroll-snap-align: start;
-    box-shadow: var(--sh);
-    transition: box-shadow 0.2s, transform 0.2s, background-color .3s, border-color .3s;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .review-card:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-    transform: translateY(-3px);
-  }
-
-  /* Card top: avatar + name + Google logo */
-  .review-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .review-card-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-  }
-
-  .author-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.05rem;
-    flex-shrink: 0;
-    text-transform: uppercase;
-  }
-
-  .author-details {
-    min-width: 0;
-  }
-
-  .author-name {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .author-meta {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin: 2px 0 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .google-g {
-    font-size: 1.3rem;
-    font-weight: 900;
-    font-family: 'Google Sans', Arial, sans-serif;
-    color: #4285f4;
-    flex-shrink: 0;
-    opacity: 0.7;
-  }
-
-  /* Stars + date row */
-  .review-card-rating {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .rating-stars {
-    display: flex;
-    gap: 2px;
-  }
-
-  .rating-stars span { font-size: 1rem; }
-  .star-filled { color: #fbbc05; }
-  .star-empty  { color: var(--border2); }
-
-  .review-date {
-    font-size: 0.75rem;
-    color: var(--muted2);
-    font-weight: 400;
-  }
-
-  /* Review text */
-  .review-text {
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: var(--ink2);
-    margin: 0;
-    flex-grow: 1;
-  }
-
-  /* Project tag */
-  .review-project-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--light);
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 0.75rem;
-    color: var(--muted);
-    font-weight: 500;
-    width: fit-content;
-  }
-
-  .review-project-tag::before {
-    content: '🔧';
-    font-size: 0.75rem;
-  }
-
-  /* Footer row: project tag + badge */
-  .review-card-footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .review-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: linear-gradient(135deg, var(--bl), var(--gel));
-    border: 1px solid var(--border2);
-    border-radius: 6px;
-    padding: 5px 10px;
-    font-size: 0.72rem;
-    color: var(--blue);
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  /* ===== DOTS ===== */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 28px;
-  }
-
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border2);
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    padding: 0;
-  }
-
-  .carousel-dot.active {
-    background: #4285f4;
-    width: 24px;
-    border-radius: 4px;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .reviews-section { padding: 60px 0 50px; }
-
-    .reviews-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 24px;
-    }
-
-    .reviews-title { font-size: 1.8rem; }
-
-    .reviews-aggregate { width: 100%; }
-
-    .review-card {
-      min-width: 280px;
-      max-width: 280px;
-    }
-
-    .carousel-btn { display: none; }
-  }
-</style>
-
-<script data-section="reviews">
-  const REVIEWS = [
-    {
-      id: 1,
-      name: 'Hendra Wijaya',
-      title: 'CEO',
-      company: 'PT Kencana Maju Bersama',
-      avatarColor: '#4285f4',
-      rating: 5,
-      review: 'ERP-nya beneran ngubah cara kami kerja — 30+ perusahaan dikelola dari satu sistem, closing bulanan dari 2 minggu jadi 2 hari. Tapi yang paling berkesan itu after-service-nya. Pernah ada issue kritis jam 10 malam, tim Magintek respons dalam hitungan menit dan selesai sebelum tengah malam. Itu bukan hal kecil buat kami.',
-      date: '2 months ago',
-      projectType: 'Enterprise ERP',
-      badge: '⚡ Fast Response'
-    },
-    {
-      id: 2,
-      name: 'Siti Nurhaliza',
-      title: 'Operations Director',
-      company: 'DAT Indonesia',
-      avatarColor: '#ea4335',
-      rating: 5,
-      review: 'Udah coba 2 vendor sebelumnya dan kecewa. Magintek beda — mereka ngerti bisnis kami dulu baru coding. Revenue online naik 300% dalam 3 bulan. Dan setiap kali ada pertanyaan atau gangguan kecil, dibalas cepat, ga pernah nunggu lebih dari beberapa menit. Servis-nya konsisten dari awal sampai sekarang.',
-      date: '3 months ago',
-      projectType: 'E-Commerce Platform',
-      badge: '🏆 Consistent Service'
-    },
-    {
-      id: 3,
-      name: 'Budi Santoso',
-      title: 'Project Manager',
-      company: 'Petrokimia Gresik',
-      avatarColor: '#34a853',
-      rating: 5,
-      review: 'Fleet 200+ kendaraan sebelumnya dipantau manual via telepon, sekarang real-time semua. Tim Magintek mau turun langsung ke lapangan buat survey kondisi operasional dulu — itu yang bikin sistemnya cocok beneran. Kalau ada trouble, support mereka always on, respons ga pernah lebih dari 5 menit.',
-      date: '4 months ago',
-      projectType: 'Fleet Management System',
-      badge: '⚡ Always On Support'
-    },
-    {
-      id: 4,
-      name: 'Ari Kusuma',
-      title: 'Store Manager',
-      company: 'iPhone Gresik',
-      avatarColor: '#fbbc05',
-      rating: 4,
-      review: 'POS-nya user-friendly, staff langsung paham tanpa training panjang. Ada minor bug di fitur retur pas awal launch — saya WA tim Magintek, dalam 15 menit sudah ada yang handle, dan sejam kemudian beres. Respons secepat itu bikin saya tenang kalau ada masalah di kemudian hari.',
-      date: '5 months ago',
-      projectType: 'POS & Inventory',
-      badge: '⚡ 15-Min Response'
-    },
-    {
-      id: 5,
-      name: 'Rahma Wijaya',
-      title: 'Product Manager',
-      company: 'Laracamp',
-      avatarColor: '#a142f4',
-      rating: 5,
-      review: 'Saat promo besar pertama, traffic naik 8x dalam 2 jam dan platform tetap stabil. Yang ga kalah penting: tim Magintek standby selama event berlangsung, pantau bareng kami dari jauh dan siap intervensi kalau ada anomali. Itu level of care yang jarang kamu temuin dari vendor lain.',
-      date: '5 months ago',
-      projectType: 'E-Learning + DevOps',
-      badge: '🛡️ Proactive Standby'
-    },
-    {
-      id: 6,
-      name: 'Yusuf Rianto',
-      title: 'Technical Lead',
-      company: 'GAPULO — Kemenparekraf',
-      avatarColor: '#00bcd4',
-      rating: 5,
-      review: 'Proyek pemerintah: deadline kaku, budget fix, wajib lolos audit keamanan. Magintek deliver on-time dan app dapat 4.7★ di Play Store. Waktu ada feedback dari tim audit mendadak, mereka langsung revisi hari itu juga tanpa drama. Komunikasinya selalu cepat dan to the point.',
-      date: '6 months ago',
-      projectType: 'Flutter App + Chatbot',
-      badge: '✅ On-Time Delivery'
-    },
-    {
-      id: 7,
-      name: 'Dian Pramesti',
-      title: 'Finance Manager',
-      company: 'Sinergi Gula Nusantara',
-      avatarColor: '#ff7043',
-      rating: 5,
-      review: 'Proses PO/PR dari 5 hari jadi 8 jam. Tapi yang saya appreciate adalah cara Magintek handle request perubahan — ga pernah nolak atau lelet. Tiap kali ada kebutuhan baru dari tim finance, mereka langsung diskusi dan kasih estimasi yang realistis. Responnya cepat, ga bikin nunggu lama.',
-      date: '7 months ago',
-      projectType: 'Financial Platform',
-      badge: '💬 Responsive Team'
-    },
-    {
-      id: 8,
-      name: 'Faisal Azhar',
-      title: 'IT Director',
-      company: 'PENS Surabaya',
-      avatarColor: '#607d8b',
-      rating: 4,
-      review: 'SIPINBAR reliable untuk audit akreditasi. Ada beberapa fitur yang baru tersedia di fase 2, tapi Magintek komunikasiin roadmap-nya dari awal jadi ga ada surprise. Setiap laporan bug dari tim kami selalu direspons cepat — rata-rata kurang dari 10 menit. Itu standar support yang saya harapin.',
-      date: '8 months ago',
-      projectType: 'Campus Asset Management',
-      badge: '⚡ 10-Min Bug Response'
-    },
-    {
-      id: 9,
-      name: 'Reza Pratama',
-      title: 'Founder',
-      company: 'Radja Kompor',
-      avatarColor: '#4caf50',
-      rating: 5,
-      review: 'Sebagai UMKM kami khawatir soal budget dan after-sales. Keduanya terjawab. Magintek bantu prioritize fitur yang paling impactful dulu, dan setelah launch mereka masih aktif follow up kalau ada yang perlu diperbaiki. Balik modal dalam 2 bulan, dan sampai sekarang masih bisa hubungi kapanpun.',
-      date: '9 months ago',
-      projectType: 'Website + E-Commerce',
-      badge: '🤝 Long-Term Support'
-    },
-    {
-      id: 10,
-      name: 'Citra Dewi',
-      title: 'Project Lead',
-      company: 'Fasindo Property',
-      avatarColor: '#e91e63',
-      rating: 5,
-      review: 'Sales cycle turun 40% setelah pakai app dari Magintek. Pernah malam sebelum soft launch ada bug display di peta interaktif — saya chat tim mereka jam 11 malam, dan dalam 20 menit sudah di-handle. Besok paginya launch berjalan mulus. Itu momen yang bikin saya rekomendasiin Magintek ke kolega.',
-      date: '10 months ago',
-      projectType: 'Real Estate Super App',
-      badge: '⚡ Crisis Handled Fast'
-    },
-    {
-      id: 11,
-      name: 'Andika Prasetyo',
-      title: 'CTO',
-      company: 'Logistik Nusantara',
-      avatarColor: '#3f51b5',
-      rating: 5,
-      review: 'Sistem tracking pengiriman kami crash saat peak season — ribuan order tertahan. Saya hubungi Magintek jam 7 pagi, dan dalam 8 menit tim mereka sudah on call bantu diagnosa masalahnya. Selesai dalam 45 menit. Itu bukan sekedar vendor, itu partner yang bisa diandalkan saat keadaan genting.',
-      date: '1 month ago',
-      projectType: 'Logistics Tracking System',
-      badge: '⚡ 8-Min Emergency Fix'
-    },
-    {
-      id: 12,
-      name: 'Mega Lestari',
-      title: 'Owner',
-      company: 'Klinik Sehat Bersama',
-      avatarColor: '#009688',
-      rating: 5,
-      review: 'Aplikasi rekam medis dari Magintek sangat membantu operasional klinik kami. Yang bikin saya loyal adalah komunikasinya — setiap kali ada update sistem atau maintenance, mereka selalu kasih notifikasi jauh hari sebelumnya. Tidak pernah ada kejutan mendadak yang ganggu jadwal pasien.',
-      date: '2 months ago',
-      projectType: 'Medical Record App',
-      badge: '💬 Proactive Communication'
-    },
-    {
-      id: 13,
-      name: 'Toni Hartawan',
-      title: 'Direktur Operasional',
-      company: 'CV Maju Jaya Teknik',
-      avatarColor: '#795548',
-      rating: 5,
-      review: 'Awalnya skeptis karena pernah kecewa sama vendor IT sebelumnya yang lambat responnya. Tapi Magintek buktiin beda. Setiap WA saya selalu dibalas dalam hitungan menit — bahkan di hari Sabtu. Proyek selesai lebih cepat dari jadwal dan kualitasnya jauh di atas ekspektasi saya.',
-      date: '3 months ago',
-      projectType: 'Inventory & Billing System',
-      badge: '⚡ Weekend Support'
-    },
-    {
-      id: 14,
-      name: 'Rina Oktavia',
-      title: 'Head of Marketing',
-      company: 'Batik Pesona Nusantara',
-      avatarColor: '#c2185b',
-      rating: 5,
-      review: 'Landing page dan sistem pre-order yang Magintek bangun untuk koleksi baru kami sangat clean dan cepat loadnya. Pas hari H peluncuran ada error di form checkout — saya panik dan langsung chat mereka. Dalam 5 menit sudah ada balasan, 20 menit kemudian sudah fix. Pelanggan kami bahkan tidak sempat notice ada masalah.',
-      date: '4 months ago',
-      projectType: 'Landing Page + Pre-Order System',
-      badge: '⚡ Fixed in 20 Minutes'
-    },
-    {
-      id: 15,
-      name: 'Dimas Arfian',
-      title: 'Founder & CEO',
-      company: 'StartupKu Indonesia',
-      avatarColor: '#f57c00',
-      rating: 5,
-      review: 'Sebagai startup kami butuh partner yang bisa gerak cepat dan fleksibel. Magintek exactly that. Fitur baru bisa direquest dan diestimasi dalam hitungan jam. Kalau ada bug, difix hari itu juga. Sudah 1 tahun kerja bareng dan standar service mereka tidak pernah turun sekalipun.',
-      date: '5 months ago',
-      projectType: 'SaaS Product Development',
-      badge: '🏆 1 Year, Zero Drop in Quality'
-    }
-  ];
-
-  (function () {
-    const carousel  = document.getElementById('reviewsCarousel');
-    const dotsWrap  = document.getElementById('carouselDots');
-    const btnPrev   = document.getElementById('reviewPrev');
-    const btnNext   = document.getElementById('reviewNext');
-
-    // Build cards
-    REVIEWS.forEach((review, i) => {
-      const initials = review.name.split(' ').map(n => n[0]).join('').slice(0, 2);
-      const starsHTML = Array.from({length: 5}, (_, s) =>
-        `<span class="${s < review.rating ? 'star-filled' : 'star-empty'}">★</span>`
-      ).join('');
-
-      const card = document.createElement('div');
-      card.className = 'review-card';
-      const badgeHTML = review.badge
-        ? `<span class="review-badge">${review.badge}</span>`
-        : '';
-
-      card.innerHTML = `
-        <div class="review-card-header">
-          <div class="review-card-author">
-            <div class="author-avatar" style="background:${review.avatarColor}">${initials}</div>
-            <div class="author-details">
-              <p class="author-name">${review.name}</p>
-              <p class="author-meta">${review.title} · ${review.company}</p>
-            </div>
-          </div>
-          <span class="google-g">G</span>
-        </div>
-        <div class="review-card-rating">
-          <div class="rating-stars">${starsHTML}</div>
-          <span class="review-date">${review.date}</span>
-        </div>
-        <p class="review-text">${review.review}</p>
-        <div class="review-card-footer">
-          <span class="review-project-tag">${review.projectType}</span>
-          ${badgeHTML}
-        </div>
-      `;
-      carousel.appendChild(card);
-
-      // Dot
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', `Review ${i + 1}`);
-      dot.addEventListener('click', () => scrollToCard(i));
-      dotsWrap.appendChild(dot);
-    });
-
-    const cards = carousel.querySelectorAll('.review-card');
-    const dots  = dotsWrap.querySelectorAll('.carousel-dot');
-
-    function scrollToCard(index) {
-      const card = cards[index];
-      if (!card) return;
-      carousel.scrollTo({ left: card.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
-    }
-
-    function updateDots() {
-      const scrollLeft = carousel.scrollLeft;
-      const cardWidth  = cards[0] ? cards[0].offsetWidth + 20 : 340;
-      const active     = Math.round(scrollLeft / cardWidth);
-      dots.forEach((d, i) => d.classList.toggle('active', i === active));
-    }
-
-    carousel.addEventListener('scroll', updateDots, { passive: true });
-
-    btnPrev.addEventListener('click', () => {
-      carousel.scrollBy({ left: -340, behavior: 'smooth' });
-    });
-    btnNext.addEventListener('click', () => {
-      carousel.scrollBy({ left: 340, behavior: 'smooth' });
-    });
-
-    // Drag-to-scroll with mouse (touch already scrolls natively via overflow-x)
-    const DRAG_THRESHOLD = 4;
-    const drag = { active: false, moved: false, startX: 0, startScroll: 0 };
-
-    carousel.addEventListener('mousedown', (e) => {
-      if (e.button !== 0) return;
-      drag.active = true;
-      drag.moved = false;
-      drag.startX = e.pageX;
-      drag.startScroll = carousel.scrollLeft;
-      carousel.classList.add('dragging');
-    });
-    window.addEventListener('mousemove', (e) => {
-      if (!drag.active) return;
-      const dx = e.pageX - drag.startX;
-      if (Math.abs(dx) > DRAG_THRESHOLD) drag.moved = true;
-      carousel.scrollLeft = drag.startScroll - dx;
-    });
-    window.addEventListener('mouseup', () => {
-      drag.active = false;
-      carousel.classList.remove('dragging');
-    });
-    // suppress the click that follows a drag so it doesn't open/scroll-snap unexpectedly
-    carousel.addEventListener('click', (e) => {
-      if (drag.moved) { e.preventDefault(); e.stopPropagation(); }
-    }, true);
-  })();
-</script>
+<script data-section="reviews">const REVIEWS=[{id:1,name:"Hendra Wijaya",title:"CEO",company:"PT Kencana Maju Bersama",avatarColor:"#4285f4",rating:5,review:"ERP-nya beneran ngubah cara kami kerja — 30+ perusahaan dikelola dari satu sistem, closing bulanan dari 2 minggu jadi 2 hari. Tapi yang paling berkesan itu after-service-nya. Pernah ada issue kritis jam 10 malam, tim Magintek respons dalam hitungan menit dan selesai sebelum tengah malam. Itu bukan hal kecil buat kami.",date:"2 months ago",projectType:"Enterprise ERP",badge:"⚡ Fast Response"},{id:2,name:"Siti Nurhaliza",title:"Operations Director",company:"DAT Indonesia",avatarColor:"#ea4335",rating:5,review:"Udah coba 2 vendor sebelumnya dan kecewa. Magintek beda — mereka ngerti bisnis kami dulu baru coding. Revenue online naik 300% dalam 3 bulan. Dan setiap kali ada pertanyaan atau gangguan kecil, dibalas cepat, ga pernah nunggu lebih dari beberapa menit. Servis-nya konsisten dari awal sampai sekarang.",date:"3 months ago",projectType:"E-Commerce Platform",badge:"🏆 Consistent Service"},{id:3,name:"Budi Santoso",title:"Project Manager",company:"Petrokimia Gresik",avatarColor:"#34a853",rating:5,review:"Fleet 200+ kendaraan sebelumnya dipantau manual via telepon, sekarang real-time semua. Tim Magintek mau turun langsung ke lapangan buat survey kondisi operasional dulu — itu yang bikin sistemnya cocok beneran. Kalau ada trouble, support mereka always on, respons ga pernah lebih dari 5 menit.",date:"4 months ago",projectType:"Fleet Management System",badge:"⚡ Always On Support"},{id:4,name:"Ari Kusuma",title:"Store Manager",company:"iPhone Gresik",avatarColor:"#fbbc05",rating:4,review:"POS-nya user-friendly, staff langsung paham tanpa training panjang. Ada minor bug di fitur retur pas awal launch — saya WA tim Magintek, dalam 15 menit sudah ada yang handle, dan sejam kemudian beres. Respons secepat itu bikin saya tenang kalau ada masalah di kemudian hari.",date:"5 months ago",projectType:"POS & Inventory",badge:"⚡ 15-Min Response"},{id:5,name:"Rahma Wijaya",title:"Product Manager",company:"Laracamp",avatarColor:"#a142f4",rating:5,review:"Saat promo besar pertama, traffic naik 8x dalam 2 jam dan platform tetap stabil. Yang ga kalah penting: tim Magintek standby selama event berlangsung, pantau bareng kami dari jauh dan siap intervensi kalau ada anomali. Itu level of care yang jarang kamu temuin dari vendor lain.",date:"5 months ago",projectType:"E-Learning + DevOps",badge:"🛡️ Proactive Standby"},{id:6,name:"Yusuf Rianto",title:"Technical Lead",company:"GAPULO — Kemenparekraf",avatarColor:"#00bcd4",rating:5,review:"Proyek pemerintah: deadline kaku, budget fix, wajib lolos audit keamanan. Magintek deliver on-time dan app dapat 4.7★ di Play Store. Waktu ada feedback dari tim audit mendadak, mereka langsung revisi hari itu juga tanpa drama. Komunikasinya selalu cepat dan to the point.",date:"6 months ago",projectType:"Flutter App + Chatbot",badge:"✅ On-Time Delivery"},{id:7,name:"Dian Pramesti",title:"Finance Manager",company:"Sinergi Gula Nusantara",avatarColor:"#ff7043",rating:5,review:"Proses PO/PR dari 5 hari jadi 8 jam. Tapi yang saya appreciate adalah cara Magintek handle request perubahan — ga pernah nolak atau lelet. Tiap kali ada kebutuhan baru dari tim finance, mereka langsung diskusi dan kasih estimasi yang realistis. Responnya cepat, ga bikin nunggu lama.",date:"7 months ago",projectType:"Financial Platform",badge:"💬 Responsive Team"},{id:8,name:"Faisal Azhar",title:"IT Director",company:"PENS Surabaya",avatarColor:"#607d8b",rating:4,review:"SIPINBAR reliable untuk audit akreditasi. Ada beberapa fitur yang baru tersedia di fase 2, tapi Magintek komunikasiin roadmap-nya dari awal jadi ga ada surprise. Setiap laporan bug dari tim kami selalu direspons cepat — rata-rata kurang dari 10 menit. Itu standar support yang saya harapin.",date:"8 months ago",projectType:"Campus Asset Management",badge:"⚡ 10-Min Bug Response"},{id:9,name:"Reza Pratama",title:"Founder",company:"Radja Kompor",avatarColor:"#4caf50",rating:5,review:"Sebagai UMKM kami khawatir soal budget dan after-sales. Keduanya terjawab. Magintek bantu prioritize fitur yang paling impactful dulu, dan setelah launch mereka masih aktif follow up kalau ada yang perlu diperbaiki. Balik modal dalam 2 bulan, dan sampai sekarang masih bisa hubungi kapanpun.",date:"9 months ago",projectType:"Website + E-Commerce",badge:"🤝 Long-Term Support"},{id:10,name:"Citra Dewi",title:"Project Lead",company:"Fasindo Property",avatarColor:"#e91e63",rating:5,review:"Sales cycle turun 40% setelah pakai app dari Magintek. Pernah malam sebelum soft launch ada bug display di peta interaktif — saya chat tim mereka jam 11 malam, dan dalam 20 menit sudah di-handle. Besok paginya launch berjalan mulus. Itu momen yang bikin saya rekomendasiin Magintek ke kolega.",date:"10 months ago",projectType:"Real Estate Super App",badge:"⚡ Crisis Handled Fast"},{id:11,name:"Andika Prasetyo",title:"CTO",company:"Logistik Nusantara",avatarColor:"#3f51b5",rating:5,review:"Sistem tracking pengiriman kami crash saat peak season — ribuan order tertahan. Saya hubungi Magintek jam 7 pagi, dan dalam 8 menit tim mereka sudah on call bantu diagnosa masalahnya. Selesai dalam 45 menit. Itu bukan sekedar vendor, itu partner yang bisa diandalkan saat keadaan genting.",date:"1 month ago",projectType:"Logistics Tracking System",badge:"⚡ 8-Min Emergency Fix"},{id:12,name:"Mega Lestari",title:"Owner",company:"Klinik Sehat Bersama",avatarColor:"#009688",rating:5,review:"Aplikasi rekam medis dari Magintek sangat membantu operasional klinik kami. Yang bikin saya loyal adalah komunikasinya — setiap kali ada update sistem atau maintenance, mereka selalu kasih notifikasi jauh hari sebelumnya. Tidak pernah ada kejutan mendadak yang ganggu jadwal pasien.",date:"2 months ago",projectType:"Medical Record App",badge:"💬 Proactive Communication"},{id:13,name:"Toni Hartawan",title:"Direktur Operasional",company:"CV Maju Jaya Teknik",avatarColor:"#795548",rating:5,review:"Awalnya skeptis karena pernah kecewa sama vendor IT sebelumnya yang lambat responnya. Tapi Magintek buktiin beda. Setiap WA saya selalu dibalas dalam hitungan menit — bahkan di hari Sabtu. Proyek selesai lebih cepat dari jadwal dan kualitasnya jauh di atas ekspektasi saya.",date:"3 months ago",projectType:"Inventory & Billing System",badge:"⚡ Weekend Support"},{id:14,name:"Rina Oktavia",title:"Head of Marketing",company:"Batik Pesona Nusantara",avatarColor:"#c2185b",rating:5,review:"Landing page dan sistem pre-order yang Magintek bangun untuk koleksi baru kami sangat clean dan cepat loadnya. Pas hari H peluncuran ada error di form checkout — saya panik dan langsung chat mereka. Dalam 5 menit sudah ada balasan, 20 menit kemudian sudah fix. Pelanggan kami bahkan tidak sempat notice ada masalah.",date:"4 months ago",projectType:"Landing Page + Pre-Order System",badge:"⚡ Fixed in 20 Minutes"},{id:15,name:"Dimas Arfian",title:"Founder & CEO",company:"StartupKu Indonesia",avatarColor:"#f57c00",rating:5,review:"Sebagai startup kami butuh partner yang bisa gerak cepat dan fleksibel. Magintek exactly that. Fitur baru bisa direquest dan diestimasi dalam hitungan jam. Kalau ada bug, difix hari itu juga. Sudah 1 tahun kerja bareng dan standar service mereka tidak pernah turun sekalipun.",date:"5 months ago",projectType:"SaaS Product Development",badge:"🏆 1 Year, Zero Drop in Quality"}];!function(){const a=document.getElementById("reviewsCarousel"),e=document.getElementById("carouselDots"),n=document.getElementById("reviewPrev"),i=document.getElementById("reviewNext");REVIEWS.forEach((n,i)=>{const r=n.name.split(" ").map(a=>a[0]).join("").slice(0,2),s=Array.from({length:5},(a,e)=>`<span class="${e<n.rating?"star-filled":"star-empty"}">★</span>`).join(""),o=document.createElement("div");o.className="review-card";const d=n.badge?`<span class="review-badge">${n.badge}</span>`:"";o.innerHTML=`\n        <div class="review-card-header">\n          <div class="review-card-author">\n            <div class="author-avatar" style="background:${n.avatarColor}">${r}</div>\n            <div class="author-details">\n              <p class="author-name">${n.name}</p>\n              <p class="author-meta">${n.title} · ${n.company}</p>\n            </div>\n          </div>\n          <span class="google-g">G</span>\n        </div>\n        <div class="review-card-rating">\n          <div class="rating-stars">${s}</div>\n          <span class="review-date">${n.date}</span>\n        </div>\n        <p class="review-text">${n.review}</p>\n        <div class="review-card-footer">\n          <span class="review-project-tag">${n.projectType}</span>\n          ${d}\n        </div>\n      `,a.appendChild(o);const l=document.createElement("button");l.className="carousel-dot"+(0===i?" active":""),l.setAttribute("aria-label",`Review ${i+1}`),l.addEventListener("click",()=>function(e){const n=t[e];if(!n)return;a.scrollTo({left:n.offsetLeft-a.offsetLeft,behavior:"smooth"})}(i)),e.appendChild(l)});const t=a.querySelectorAll(".review-card"),r=e.querySelectorAll(".carousel-dot");a.addEventListener("scroll",function(){const e=a.scrollLeft,n=t[0]?t[0].offsetWidth+20:340,i=Math.round(e/n);r.forEach((a,e)=>a.classList.toggle("active",e===i))},{passive:!0}),n.addEventListener("click",()=>{a.scrollBy({left:-340,behavior:"smooth"})}),i.addEventListener("click",()=>{a.scrollBy({left:340,behavior:"smooth"})});const s={active:!1,moved:!1,startX:0,startScroll:0};a.addEventListener("mousedown",e=>{0===e.button&&(s.active=!0,s.moved=!1,s.startX=e.pageX,s.startScroll=a.scrollLeft,a.classList.add("dragging"))}),window.addEventListener("mousemove",e=>{if(!s.active)return;const n=e.pageX-s.startX;Math.abs(n)>4&&(s.moved=!0),a.scrollLeft=s.startScroll-n}),window.addEventListener("mouseup",()=>{s.active=!1,a.classList.remove("dragging")}),a.addEventListener("click",a=>{s.moved&&(a.preventDefault(),a.stopPropagation())},!0)}();</script>
 <section id="faq">
 <div class="si">
   <div class="faq-head reveal">
@@ -1936,23 +1284,17 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
   </div>
   <button class="mnav" id="mNext" onclick="mNav(1)">&#8594;</button>
 </div>
+</main>
 
 <!-- DATA (defined before the app logic runs) -->
-<script src="js/data-md.js"></script>
-<script src="js/data-imgs.js"></script>
+<script src="js/data-md.min.js?v=512f2b135b"></script>
+<script src="js/data-imgs.min.js?v=d7ec5c96d9"></script>
 
-<script src="js/app.js"></script>
+<script src="js/app.min.js?v=1ee8cfe245"></script>
 
 
 <!-- Meta Pixel: WhatsApp click -> Lead -->
-<script>
-document.addEventListener('click', function (e) {
-  const link = e.target.closest('a[href*="wa.me"]');
-  if (link && window.fbq) {
-    fbq('track', 'Lead', { content_name: 'WhatsApp Click' });
-  }
-}, true);
-</script>
+<script>document.addEventListener("click",function(e){e.target.closest('a[href*="wa.me"]')&&window.fbq&&fbq("track","Lead",{content_name:"WhatsApp Click"})},!0);</script>
 
 </body>
 </html>

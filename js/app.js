@@ -180,12 +180,20 @@ const orbSpeed=[0.18,0.28,0.40];
 const hcard=document.querySelector('.hcard');
 const floatChips=[...document.querySelectorAll('.hero .fc')];
 
+const sectionEls=[...document.querySelectorAll('section[id]')];
+let sectionOffsets=[];
+function measureSections(){
+  sectionOffsets=sectionEls.map(s=>({id:s.id,top:s.offsetTop}));
+}
+measureSections();
+window.addEventListener('resize',measureSections,{passive:true});
+
 function onScroll(){
   const y=window.scrollY;
   navEl.classList.toggle('sc',y>40);
   // active section
   let cur='';
-  document.querySelectorAll('section[id]').forEach(s=>{if(y>=s.offsetTop-180)cur=s.id});
+  sectionOffsets.forEach(s=>{if(y>=s.top-180)cur=s.id});
   nl.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
   // scroll progress
   const h=document.documentElement.scrollHeight-window.innerHeight;

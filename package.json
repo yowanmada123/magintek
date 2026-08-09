@@ -1,0 +1,22 @@
+{
+  "name": "magintek",
+  "version": "1.0.0",
+  "description": "MAGINTEK marketing site",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yowanmada123/magintek.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yowanmada123/magintek/issues"
+  },
+  "homepage": "https://github.com/yowanmada123/magintek#readme",
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "terser": "^5.49.2"
+  }
+}

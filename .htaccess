@@ -1,0 +1,40 @@
+# Apache config for shared hosting (e.g. Hostinger). Ignored by hosts that
+# don't run Apache — see _headers (Netlify/Cloudflare Pages) and vercel.json
+# (Vercel) for the equivalent rules there.
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML must always be revalidated so deploys show up immediately.
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS/JS filenames carry a content-hash query string (?v=...) from the
+  # build step, so it's safe to cache them for a long time.
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Images/fonts change rarely and aren't versioned; a long cache is still
+  # the right trade-off for a marketing site like this.
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|webp|svg|png)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

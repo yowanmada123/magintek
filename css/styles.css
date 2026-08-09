@@ -1,4 +1,5 @@
 *{margin:0;padding:0;box-sizing:border-box}
+picture{display:contents}
 :root{
   --w:#fff;--off:#f7f9fc;--light:#eef2f8;
   --ink:#080d1a;--ink2:#1c2540;--ink3:#3a4468;
@@ -55,7 +56,7 @@ nav.sc{box-shadow:var(--sh);background:var(--navbg-sc)}
 .btn-hire:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(26,92,255,.28)}
 
 /* THEME TOGGLE */
-.theme-toggle{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--border2);background:var(--w);color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s}
+.theme-toggle{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--border2);background:var(--w);color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s}
 .theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
 .theme-toggle svg{display:block}
 .theme-toggle .ti-moon{display:none}
@@ -65,7 +66,7 @@ nav.sc{box-shadow:var(--sh);background:var(--navbg-sc)}
 .mdrawer-cta .theme-toggle::after{content:'Toggle theme';font-size:.8rem;font-weight:600}
 
 /* hamburger + mobile drawer */
-.hbtn{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:none;cursor:pointer;padding:0;flex-shrink:0}
+.hbtn{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:transparent;border:none;cursor:pointer;padding:0;flex-shrink:0}
 .hbtn span{display:block;width:22px;height:2px;background:var(--ink2);border-radius:2px;transition:transform .3s,opacity .3s}
 .hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hbtn.open span:nth-child(2){opacity:0}
@@ -78,7 +79,7 @@ nav.sc{box-shadow:var(--sh);background:var(--navbg-sc)}
 .mdrawer.open .mdrawer-backdrop{opacity:1}
 .mdrawer.open .mdrawer-panel{transform:translateX(0)}
 .mdrawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
-.mdrawer-close{width:34px;height:34px;border-radius:50%;background:var(--off);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;line-height:1;color:var(--ink2);cursor:pointer;transition:all .2s}
+.mdrawer-close{width:44px;height:44px;border-radius:50%;background:var(--off);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;line-height:1;color:var(--ink2);cursor:pointer;transition:all .2s}
 .mdrawer-close:hover{background:var(--blue);color:#fff}
 .mdrawer-nl{list-style:none;display:flex;flex-direction:column;gap:.2rem;margin-bottom:2rem}
 .mdrawer-nl a{display:block;padding:.75rem .3rem;color:var(--ink2);text-decoration:none;font-size:.95rem;font-weight:600;border-bottom:1px solid var(--border);transition:color .2s,padding-left .2s}
@@ -88,18 +89,19 @@ nav.sc{box-shadow:var(--sh);background:var(--navbg-sc)}
 body.no-scroll{overflow:hidden}
 
 /* FLOATING WHATSAPP CTA */
-.wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45),0 2px 8px rgba(8,13,26,.15);z-index:1500;transition:transform .25s,box-shadow .25s;animation:waPulse 2.6s ease-in-out infinite}
+.wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45),0 2px 8px rgba(8,13,26,.15);z-index:1500;transition:transform .25s,box-shadow .25s}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 10px 28px rgba(37,211,102,.55),0 2px 8px rgba(8,13,26,.2)}
-@keyframes waPulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.4)}50%{box-shadow:0 6px 20px rgba(37,211,102,.45),0 0 0 10px rgba(37,211,102,0)}}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.55);animation:waPulse 2.6s ease-in-out infinite;pointer-events:none;z-index:-1;will-change:transform,opacity}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.5);opacity:0}}
 @media(max-width:640px){.wa-float{right:16px;bottom:16px;width:52px;height:52px}}
-@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
+@media(prefers-reduced-motion:reduce){.wa-float::before{animation:none}}
 
 /* PORTFOLIO CHOICE MODAL */
 .pfchoice{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1.5rem}
 .pfchoice.open{display:flex}
 .pfchoice-backdrop{position:absolute;inset:0;background:rgba(8,13,26,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .pfchoice-panel{position:relative;background:var(--w);border-radius:20px;padding:2.2rem;max-width:520px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,.35);animation:mIn .3s cubic-bezier(.16,1,.3,1)}
-.pfchoice-close{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;background:var(--off);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--ink2);cursor:pointer;transition:all .2s}
+.pfchoice-close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:var(--off);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--ink2);cursor:pointer;transition:all .2s}
 .pfchoice-close:hover{background:var(--blue);color:#fff}
 .pfchoice-title{font-size:1.3rem;font-weight:800;color:var(--ink);letter-spacing:-.4px;margin-bottom:.3rem}
 .pfchoice-sub{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
@@ -208,7 +210,7 @@ h1.hh .bl{color:var(--blue)}
 .sv::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--ind));transform:scaleX(0);transition:transform .35s;transform-origin:left}
 .sv:hover{border-color:rgba(26,92,255,.2)}
 .sv:hover::after{transform:scaleX(1)}
-.sno{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted2);margin-bottom:.9rem}
+.sno{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);margin-bottom:.9rem}
 .sico{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem}
 .sicob{background:var(--bl)}.sicoi{background:var(--inl)}.sicot{background:var(--tel)}.sicog{background:var(--gol)}
 .st{font-weight:700;font-size:.9rem;color:var(--ink);margin-bottom:.55rem;letter-spacing:-.2px}
@@ -353,9 +355,9 @@ footer a[target]{position:relative;z-index:1}
 .mvisit{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--blue),var(--ind));color:#fff;padding:.45rem 1rem;border-radius:8px;font-size:.72rem;font-weight:700;text-decoration:none;margin:0 0 1.1rem;box-shadow:0 4px 16px rgba(26,92,255,.28);transition:all .25s}
 .mvisit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,92,255,.4)}
 .mvisit[hidden]{display:none}
-.mcl2{position:fixed;top:1.2rem;right:1.2rem;width:38px;height:38px;border-radius:50%;background:var(--w);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--ink2);transition:all .25s;box-shadow:var(--sh);z-index:10}
+.mcl2{position:fixed;top:1.2rem;right:1.2rem;width:44px;height:44px;border-radius:50%;background:var(--w);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--ink2);transition:all .25s;box-shadow:var(--sh);z-index:10}
 .mcl2:hover{background:var(--blue);color:#fff}
-.mnav{position:fixed;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:var(--w);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--ink2);transition:all .25s;box-shadow:var(--sh);z-index:10}
+.mnav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--w);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--ink2);transition:all .25s;box-shadow:var(--sh);z-index:10}
 .mnav:hover{background:var(--blue);color:#fff}
 #mPrev{left:.8rem}#mNext{right:.8rem}
 .mc{font-size:.72rem;color:var(--muted);text-align:right;margin-top:.4rem;font-family:'JetBrains Mono',monospace}
