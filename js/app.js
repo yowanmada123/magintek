@@ -35,15 +35,35 @@ document.querySelectorAll('.faqi.open .faqa').forEach(a=>{ a.style.maxHeight = a
 
 let mIdx=0, mList=[];
 
+// MD/IMGS (project detail text + image map) are only needed once someone
+// actually opens a portfolio item, so they're loaded on first click rather
+// than blocking initial page load — see index.template.html for context.
+let dataReady=null;
+function loadScript(src){
+  return new Promise((resolve,reject)=>{
+    const s=document.createElement('script');
+    s.src=src;
+    s.onload=()=>resolve();
+    s.onerror=()=>reject(new Error('Failed to load '+src));
+    document.body.appendChild(s);
+  });
+}
+function ensureData(){
+  if(!dataReady) dataReady=Promise.all([loadScript('js/data-md.min.js'),loadScript('js/data-imgs.min.js')]);
+  return dataReady;
+}
+
 function openM(idx){
-  mIdx=idx;
-  const allCards=[...document.querySelectorAll('[data-idx]')];
-  mList=allCards.map(c=>parseInt(c.dataset.idx));
-  if(!mList.includes(idx)) mList=[idx];
-  mIdx=mList.indexOf(idx);
-  renderM();
-  document.getElementById('mOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
+  ensureData().then(()=>{
+    mIdx=idx;
+    const allCards=[...document.querySelectorAll('[data-idx]')];
+    mList=allCards.map(c=>parseInt(c.dataset.idx));
+    if(!mList.includes(idx)) mList=[idx];
+    mIdx=mList.indexOf(idx);
+    renderM();
+    document.getElementById('mOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  });
 }
 document.addEventListener('click',e=>{
   const card=e.target.closest('[data-idx]');

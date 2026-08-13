@@ -37,7 +37,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <meta name="facebook-domain-verification" content="jvu3301bm00mwno7uzwyenantezo1x" />
 
@@ -209,9 +209,9 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 <div id="sec-contact"></div>
 </main>
 
-<!-- DATA (defined before the app logic runs) -->
-<script src="js/data-md.js"></script>
-<script src="js/data-imgs.js"></script>
+<!-- DATA (js/data-md.js + js/data-imgs.js are lazy-loaded by app.js on first
+     portfolio-item click instead of eagerly here — see ensureData() — since
+     that data is only needed inside the detail modal, not for first paint. -->
 
 <!-- SECTION LOADER: fetch each fragment, inject it, then load the interaction layer -->
 <script>

@@ -29,7 +29,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.min.css?v=7988ac6d1e">
 <meta name="facebook-domain-verification" content="jvu3301bm00mwno7uzwyenantezo1x" />
 
@@ -1286,11 +1286,11 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 </div>
 </main>
 
-<!-- DATA (defined before the app logic runs) -->
-<script src="js/data-md.min.js?v=512f2b135b"></script>
-<script src="js/data-imgs.min.js?v=d7ec5c96d9"></script>
+<!-- DATA (js/data-md.js + js/data-imgs.js are lazy-loaded by app.js on first
+     portfolio-item click instead of eagerly here — see ensureData() — since
+     that data is only needed inside the detail modal, not for first paint. -->
 
-<script src="js/app.min.js?v=1ee8cfe245"></script>
+<script src="js/app.min.js?v=1fa1ff9eb6"></script>
 
 
 <!-- Meta Pixel: WhatsApp click -> Lead -->

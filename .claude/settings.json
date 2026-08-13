@@ -37,7 +37,14 @@
       "Bash(node build.js)",
       "Bash(node static-check.js)",
       "Bash(node extra-regression.js)",
-      "Bash(node footer-check.js)"
+      "Bash(node footer-check.js)",
+      "Bash(node lazyload-check.js)",
+      "Bash(node -e \"console.log\\(require.resolve\\('playwright'\\)\\)\")",
+      "Bash(rm -rf node_modules)",
+      "Bash(node full-regression2.js)",
+      "Bash(grep -oE '[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}\\(?=/|\"|$\\)')",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('vercel.json','utf8'\\)\\); console.log\\('vercel.json valid JSON'\\)\")",
+      "Bash(node csp-check.js)"
     ]
   }
 }
