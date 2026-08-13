@@ -31,7 +31,11 @@ function toggleFaq(btn){
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
-document.querySelectorAll('.faqi.open .faqa').forEach(a=>{ a.style.maxHeight = a.scrollHeight + 'px'; });
+// Default-open FAQ item's expanded height comes from the .faqi.open .faqa
+// CSS rule (a generous fixed max-height) instead of a scrollHeight read here
+// — that read would force a synchronous layout of the whole (large) page
+// right at load time. toggleFaq() below still measures scrollHeight exactly,
+// but only in response to a click, well after first paint.
 
 let mIdx=0, mList=[];
 
@@ -205,7 +209,6 @@ let sectionOffsets=[];
 function measureSections(){
   sectionOffsets=sectionEls.map(s=>({id:s.id,top:s.offsetTop}));
 }
-measureSections();
 window.addEventListener('resize',measureSections,{passive:true});
 
 function onScroll(){
@@ -222,7 +225,15 @@ function onScroll(){
   orbs.forEach((o,i)=>{o.style.transform=`translate3d(0,${(-y*orbSpeed[i]).toFixed(1)}px,0)`;});
 }
 window.addEventListener('scroll',onScroll,{passive:true});
-onScroll();
+
+// Both of the above read layout geometry (offsetTop / scrollHeight), which
+// forces the browser to flush style/layout the moment they run. Running that
+// synchronously at load time competes with first paint on a page this size —
+// and none of it matters until the user actually scrolls — so defer the
+// first measurement to an idle moment instead of paying for it upfront.
+function initScrollState(){ measureSections(); onScroll(); }
+if('requestIdleCallback' in window) requestIdleCallback(initScrollState,{timeout:1000});
+else setTimeout(initScrollState,0);
 
 /* ---------- 3D TILT ---------- */
 const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;

@@ -44,7 +44,22 @@
       "Bash(node full-regression2.js)",
       "Bash(grep -oE '[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}\\(?=/|\"|$\\)')",
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('vercel.json','utf8'\\)\\); console.log\\('vercel.json valid JSON'\\)\")",
-      "Bash(node csp-check.js)"
+      "Bash(node csp-check.js)",
+      "Bash(npx --yes lighthouse --version)",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-before.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new --no-sandbox\" --preset=desktop --quiet)",
+      "Bash(mkdir -p \"C:/Users/komputer/AppData/Local/Temp/claude/d--MADA-CV-CV-magintek/7515fce4-6a25-40d0-9613-714ac739ca1c/scratchpad\")",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-before.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new\" --quiet)",
+      "Bash(cp d:/MADA/CV/CV/magintek/index.html ./test-noreveal.html)",
+      "Bash(node -e ' *)",
+      "Bash(npx --yes lighthouse http://localhost:8099/test-noreveal.html --output=json --output-path=./lh-noreveal.json --only-categories=performance --chrome-flags=\"--headless=new\" --quiet)",
+      "Bash(npx --yes lighthouse http://localhost:8099/test-noreveal.html --output=json --output-path=./lh-noreveal2.json --only-categories=performance --chrome-flags=\"--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage\" --throttling-method=devtools --quiet)",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-current.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage\" --throttling-method=devtools --quiet)",
+      "Bash(sed -i 's/class=\"pc reveal\"/class=\"pc\"/g' sections/sec_portfolio.html sections/sec_portfolio-mobile.html)",
+      "Bash(sed -i 's/class=\"cc reveal\"/class=\"cc\"/g' sections/sec_catalog.html sections/sec_writing.html)",
+      "Bash(sed -i 's/class=\"tc reveal\"/class=\"tc\"/g' sections/sec_writing.html)",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-after1.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage\" --throttling-method=devtools --quiet)",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-after2.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage\" --throttling-method=devtools --quiet)",
+      "Bash(npx --yes lighthouse http://localhost:8090/index.html --output=json --output-path=./lh-after3.json --only-categories=performance,accessibility,best-practices,seo --chrome-flags=\"--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage\" --throttling-method=devtools --quiet)"
     ]
   }
 }
