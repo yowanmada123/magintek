@@ -117,29 +117,47 @@ function sendToWA() {
     const url = 'https://wa.me/6285778133205?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   }
-// Loads the modal image, retrying once on failure (shared hosting with no
-// CDN occasionally drops a single request) before showing a manual retry
-// button instead of a silent broken-image icon.
+// Loads the modal image with a generous retry-with-backoff burst, then keeps
+// quietly retrying in the background indefinitely — so a flaky connection
+// heals itself without anyone needing to notice or click anything. The
+// "failed" message only appears once the fast burst is exhausted, and even
+// then it keeps trying underneath; it isn't a dead end.
+const RETRY_DELAYS=[500,1000,2000,3000,5000];
+const BACKGROUND_RETRY_MS=6000;
+let modalRetryTimer=null;
 function loadModalImage(url,attempt){
   attempt=attempt||0;
+  clearTimeout(modalRetryTimer);
   const mImg=document.getElementById('mImg');
   const miBox=mImg.closest('.mi');
   const mErr=document.getElementById('mErr');
-  mErr.hidden=true;
-  miBox.classList.add('img-loading');
-  mImg.onload=()=>miBox.classList.remove('img-loading');
+  if(attempt===0){ mErr.hidden=true; miBox.classList.add('img-loading'); }
+  mImg.onload=()=>{ miBox.classList.remove('img-loading'); mErr.hidden=true; };
   mImg.onerror=()=>{
-    if(attempt<1){
-      setTimeout(()=>loadModalImage(url,attempt+1),600);
+    if(attempt<RETRY_DELAYS.length){
+      setTimeout(()=>loadModalImage(url,attempt+1),RETRY_DELAYS[attempt]);
     }else{
       miBox.classList.remove('img-loading');
       mErr.hidden=false;
+      modalRetryTimer=setTimeout(()=>loadModalImage(url,attempt),BACKGROUND_RETRY_MS);
     }
   };
   mImg.src=attempt?url+(url.includes('?')?'&':'?')+'_r='+Date.now():url;
 }
 let mCurrentImgUrl='';
 function retryModalImg(){ if(mCurrentImgUrl) loadModalImage(mCurrentImgUrl,0); }
+
+// Kept alive in a module-level array: an Image() with no other reference can
+// be garbage-collected mid-download in some engines, silently cancelling the
+// preload (and, worse, potentially leaving a half-fetched response behind).
+const modalPreloadCache=[];
+function preloadModalImage(url){
+  if(!url) return;
+  const im=new Image();
+  im.src=url;
+  modalPreloadCache.push(im);
+  if(modalPreloadCache.length>8) modalPreloadCache.shift();
+}
 
 function renderM(){
   const globalIdx=mList[mIdx];
@@ -152,8 +170,7 @@ function renderM(){
   // starts browsing through the list.
   [mIdx-1,mIdx+1].forEach(i=>{
     if(i<0||i>=mList.length) return;
-    const url=IMGS[imgKeys[mList[i]]];
-    if(url) new Image().src=url;
+    preloadModalImage(IMGS[imgKeys[mList[i]]]);
   });
   document.getElementById('mTitle').textContent=d.title;
   document.getElementById('mType').textContent=d.type;
@@ -180,7 +197,7 @@ function mNav(d){
   if(n<0||n>=mList.length)return;
   mIdx=n; renderM();
 }
-function mClose(){document.getElementById('mOverlay').classList.remove('open');document.body.style.overflow='';}
+function mClose(){document.getElementById('mOverlay').classList.remove('open');document.body.style.overflow='';clearTimeout(modalRetryTimer);}
 function mCloseOut(e){if(e.target===document.getElementById('mOverlay'))mClose();}
 document.addEventListener('keydown',e=>{
   if(!document.getElementById('mOverlay').classList.contains('open'))return;
