@@ -181,6 +181,44 @@ document.addEventListener('keydown',e=>{
 const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
+// Hero background video: keep it replaying forever. `loop` handles the normal
+// case; this restarts it if a browser still fires `ended`, resumes it after the
+// tab comes back, and starts it on first interaction if autoplay was blocked.
+(function(){
+  const v=document.querySelector('.hero-vid');
+  if(!v) return;
+  v.muted=true;
+  const play=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+  v.addEventListener('ended',()=>{v.currentTime=0;play();});
+  v.addEventListener('pause',()=>{if(!document.hidden)play();});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();});
+  ['pointerdown','keydown','touchstart','scroll'].forEach(ev=>addEventListener(ev,play,{once:true,passive:true}));
+  play();
+})();
+
+// Section entrance: every content block below the hero animates in when it
+// scrolls into view; blocks entering together are staggered. The animation
+// class is removed once it finishes so hover/tilt transforms keep working.
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const SEL='.chip,.sh,.ss,.dl,.pff,.reviews-eyebrow,.reviews-title,.reviews-subtitle,.reviews-aggregate,.reviews-carousel-wrapper,'+
+    '.ag>div>*,.phb,.fi,.sv,.tc,.pc,.cc,.tli,.edc,.faqi,.ctg>div>*,.cci,.cfcard,footer>*';
+  const found=[...document.querySelectorAll('section:not(#hero),footer')].flatMap(s=>[...s.querySelectorAll(SEL)]);
+  // keep only the innermost matches so nothing animates twice
+  const items=found.filter(el=>!found.some(o=>o!==el&&el.contains(o)));
+  const io=new IntersectionObserver(entries=>{
+    const hits=entries.filter(en=>en.isIntersecting).map(en=>en.target)
+      .sort((a,b)=>{const ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();return (ra.top-rb.top)||(ra.left-rb.left);});
+    hits.forEach((el,i)=>{
+      io.unobserve(el);
+      el.style.setProperty('--rv-d',Math.min(i*.08,.6)+'s');
+      el.classList.add('rv-go');
+      el.addEventListener('animationend',()=>{el.classList.remove('rv','rv-go');el.style.removeProperty('--rv-d');},{once:true});
+    });
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  items.forEach(el=>{el.classList.add('rv');io.observe(el);});
+})();
+
 // Mobile nav drawer
 const hbtn=document.getElementById('hbtn');
 const mdrawer=document.getElementById('mdrawer');
