@@ -161,7 +161,7 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
       <a href="#portfolio" class="pfchoice-opt" onclick="closePfChoice()">
         <div class="pfchoice-icon">&#128421;&#65039;</div>
         <div class="pfchoice-name">Website</div>
-        <div class="pfchoice-desc">25 web projects &mdash; ERP, POS, e-commerce &amp; more</div>
+        <div class="pfchoice-desc">26 web projects &mdash; ERP, POS, e-commerce &amp; more</div>
       </a>
       <a href="#portfolio-mobile" class="pfchoice-opt" onclick="closePfChoice()">
         <div class="pfchoice-icon">&#128241;</div>
@@ -309,12 +309,13 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
 <div class="si">
   <div class="chip">Web Projects</div>
   <h2 class="sh">Website <span class="bl">Portfolio</span></h2>
-  <p class="ss">25 real web projects built and delivered. Click an image for full details.</p>
+  <p class="ss">26 real web projects built and delivered. Click an image for full details.</p>
   <div class="pff">
     <button class="pfb act" onclick="filterW(this,'all')">All Web</button>
     <button class="pfb" onclick="filterW(this,'system')">Systems &amp; ERP</button>
     <button class="pfb" onclick="filterW(this,'web')">E-Commerce &amp; Web</button>
     <button class="pfb" onclick="filterW(this,'design')">Design &amp; UI/UX</button>
+    <button class="pfb" onclick="filterW(this,'monitor')">Monitoring &amp; 3D</button>
   </div>
   <div class="pfg" id="wGrid"><div class="pc" data-cat="web design" data-idx="0">
   <div class="pc-img-box"><picture><source srcset="assets/img/img-0.webp" type="image/webp"><img class="pc-img" src="assets/img/img-0.jpg" alt="komatsu.co.id" loading="lazy"></picture>
@@ -326,6 +327,16 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
     <div class="pc-client">PT Komatsu Indonesia (via Tempo360)</div>
     <div class="pc-desc">Corporate web platform centralized for heavy equipment products, after-sales services, industrial solutions, and digital marketing. Modular ...</div>
     <div class="pc-techs"><span class="pt">ASP.NET</span><span class="pt">jQuery</span><span class="pt">IIS</span><span class="pt">SEO</span><span class="pt">UI/UX</span></div>
+  </div>
+</div><div class="pc" data-cat="web system monitor" data-idx="71">
+  <div class="pc-img-box"><picture><source srcset="assets/img/img-271.webp" type="image/webp"><img class="pc-img" src="assets/img/img-271.jpg" alt="Port Command Center" loading="lazy"></picture>
+    <div class="pc-overlay"><div class="pc-zoom">&#128269; View Details</div></div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-meta"><span class="pc-type">3D Port Monitoring</span><span class="pc-live"></span></div>
+    <div class="pc-title">Port Command Center</div>
+    <div class="pc-desc">An interactive 3D digital twin of Tanjung Perak Port with CCTV &amp; siren network, radar zones, incident history, and alarm control.</div>
+    <div class="pc-techs"><span class="pt">Three.js</span><span class="pt">glTF</span><span class="pt">OpenStreetMap</span></div>
   </div>
 </div><div class="pc" data-cat="web system" data-idx="1">
   <div class="pc-img-box"><picture><source srcset="assets/img/img-1.webp" type="image/webp"><img class="pc-img" src="assets/img/img-1.jpg" alt="kencana.org" loading="lazy"></picture>
@@ -1291,7 +1302,6 @@ src="https://www.facebook.com/tr?id=1042496984842549&ev=PageView&noscript=1"/></
      that data is only needed inside the detail modal, not for first paint. -->
 
 <script src="js/app.min.js?v=cb7a48090e"></script>
-
 
 <!-- Meta Pixel: WhatsApp click -> Lead -->
 <script>document.addEventListener("click",function(e){e.target.closest('a[href*="wa.me"]')&&window.fbq&&fbq("track","Lead",{content_name:"WhatsApp Click"})},!0);</script>

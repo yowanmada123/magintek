@@ -567,4 +567,12 @@ const MD = [
     tech: [],
     url: 'https://belajarsmart.netlify.app',
   },
+  {
+    title: 'Port Command Center',
+    type: '3D Digital Twin · Port Monitoring',
+    client: '',
+    desc: 'An interactive 3D command center for Tanjung Perak Port, Surabaya, built as a digital twin of the port area from OpenStreetMap data. Operators can explore warehouses, workshops, fuel tanks, terminals, offices, and vessels in a real-time 3D map, click any building, ship, radar, or CCTV marker to view its details (operator, status, footprint, commodity, capacity and occupancy, dock doors, on-site staff, and nearby vessels), and step inside warehouses through a dedicated warehouse viewer. Security features include a CCTV and siren network (77 warehouses and 46 road points), radar coverage zones, live alarm cards with escalation levels and message tracking, jump-to-location and jump-to-CCTV actions, incident history, and an automatic alarm simulation mode, with a categorized legend and layer toggles for CCTV markers and building labels.',
+    tech: ['Three.js', 'glTF', 'OpenStreetMap', 'Vite'],
+    url: 'https://pocce.netlify.app',
+  },
 ];
