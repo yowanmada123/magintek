@@ -57,7 +57,21 @@ function ensureData(){
   return dataReady;
 }
 
+// Start loading MD/IMGS as soon as the page is idle rather than waiting for
+// the first click. Without this they only start downloading at click time,
+// where they queue on the connection behind whatever lazy-loaded thumbnails
+// are still in flight — on a slow connection that can add several seconds
+// before the modal has anything to show. Idle-time preload means the data
+// is normally already there by the time someone actually reaches the
+// portfolio section and clicks a card.
+function prefetchModalData(){ ensureData().catch(()=>{}); }
+if('requestIdleCallback' in window) requestIdleCallback(prefetchModalData,{timeout:3000});
+else setTimeout(prefetchModalData,1500);
+
 function openM(idx){
+  const mOverlay=document.getElementById('mOverlay');
+  mOverlay.classList.add('open','m-loading');
+  document.body.style.overflow='hidden';
   ensureData().then(()=>{
     mIdx=idx;
     const allCards=[...document.querySelectorAll('[data-idx]')];
@@ -65,8 +79,7 @@ function openM(idx){
     if(!mList.includes(idx)) mList=[idx];
     mIdx=mList.indexOf(idx);
     renderM();
-    document.getElementById('mOverlay').classList.add('open');
-    document.body.style.overflow='hidden';
+    mOverlay.classList.remove('m-loading');
   });
 }
 document.addEventListener('click',e=>{
@@ -107,8 +120,20 @@ function sendToWA() {
 function renderM(){
   const globalIdx=mList[mIdx];
   const d=MD[globalIdx];
-  const img=IMGS[Object.keys(IMGS)[globalIdx]]||'';
-  document.getElementById('mImg').src=img;
+  const imgKeys=Object.keys(IMGS);
+  const img=IMGS[imgKeys[globalIdx]]||'';
+  const mImg=document.getElementById('mImg');
+  const miBox=mImg.closest('.mi');
+  miBox.classList.add('img-loading');
+  mImg.onload=mImg.onerror=()=>miBox.classList.remove('img-loading');
+  mImg.src=img;
+  // Preload the neighboring images so prev/next feels instant once someone
+  // starts browsing through the list.
+  [mIdx-1,mIdx+1].forEach(i=>{
+    if(i<0||i>=mList.length) return;
+    const url=IMGS[imgKeys[mList[i]]];
+    if(url) new Image().src=url;
+  });
   document.getElementById('mTitle').textContent=d.title;
   document.getElementById('mType').textContent=d.type;
   document.getElementById('mClient').textContent=d.client?('Client: '+d.client):'';
