@@ -52,7 +52,10 @@
   <button class="mcl2" onclick="mClose()">&#10005;</button>
   <button class="mnav" id="mPrev" onclick="mNav(-1)">&#8592;</button>
   <div class="mb" id="mBox">
-    <div class="mi"><img id="mImg" class="mimg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div>
+    <div class="mi">
+      <img id="mImg" class="mimg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+      <div class="mi-err" id="mErr" hidden>Gagal memuat gambar.<button type="button" onclick="retryModalImg()">Coba lagi</button></div>
+    </div>
     <div class="minfo">
       <div class="mt" id="mTitle"></div>
       <div class="mty" id="mType"></div>

@@ -117,16 +117,37 @@ function sendToWA() {
     const url = 'https://wa.me/6285778133205?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   }
+// Loads the modal image, retrying once on failure (shared hosting with no
+// CDN occasionally drops a single request) before showing a manual retry
+// button instead of a silent broken-image icon.
+function loadModalImage(url,attempt){
+  attempt=attempt||0;
+  const mImg=document.getElementById('mImg');
+  const miBox=mImg.closest('.mi');
+  const mErr=document.getElementById('mErr');
+  mErr.hidden=true;
+  miBox.classList.add('img-loading');
+  mImg.onload=()=>miBox.classList.remove('img-loading');
+  mImg.onerror=()=>{
+    if(attempt<1){
+      setTimeout(()=>loadModalImage(url,attempt+1),600);
+    }else{
+      miBox.classList.remove('img-loading');
+      mErr.hidden=false;
+    }
+  };
+  mImg.src=attempt?url+(url.includes('?')?'&':'?')+'_r='+Date.now():url;
+}
+let mCurrentImgUrl='';
+function retryModalImg(){ if(mCurrentImgUrl) loadModalImage(mCurrentImgUrl,0); }
+
 function renderM(){
   const globalIdx=mList[mIdx];
   const d=MD[globalIdx];
   const imgKeys=Object.keys(IMGS);
   const img=IMGS[imgKeys[globalIdx]]||'';
-  const mImg=document.getElementById('mImg');
-  const miBox=mImg.closest('.mi');
-  miBox.classList.add('img-loading');
-  mImg.onload=mImg.onerror=()=>miBox.classList.remove('img-loading');
-  mImg.src=img;
+  mCurrentImgUrl=img;
+  loadModalImage(img);
   // Preload the neighboring images so prev/next feels instant once someone
   // starts browsing through the list.
   [mIdx-1,mIdx+1].forEach(i=>{

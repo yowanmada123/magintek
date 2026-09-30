@@ -356,6 +356,10 @@ footer a[target]{position:relative;z-index:1}
 .mi.img-loading::after,.mo.m-loading .mb::after{content:'';position:absolute;top:50%;left:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border:3px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:mspin .7s linear infinite;z-index:2}
 .mo.m-loading .mb::before{content:'';position:absolute;inset:0;background:var(--w);z-index:1}
 @keyframes mspin{to{transform:rotate(360deg)}}
+.mi-err{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;color:var(--muted);font-size:.85rem;text-align:center;padding:1rem;background:var(--off)}
+.mi-err[hidden]{display:none}
+.mi-err button{background:var(--blue-solid);color:#fff;border:none;padding:.5rem 1.1rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;transition:background .2s}
+.mi-err button:hover{background:var(--blue2)}
 .minfo{padding:1.4rem 1.6rem;border-top:1px solid var(--border);flex-shrink:0}
 .mt{font-weight:800;font-size:1rem;color:var(--ink);margin-bottom:.2rem;letter-spacing:-.3px}
 .mty{font-size:.72rem;color:var(--blue-text);font-weight:700;margin-bottom:.3rem}
