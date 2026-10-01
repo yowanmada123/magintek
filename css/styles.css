@@ -422,6 +422,16 @@ section,.stats-b,footer{position:relative;z-index:1}
 .hero-vid{object-fit:cover}
 .hero-vid-ov{background:linear-gradient(160deg,rgba(255,255,255,.82) 38%,rgba(240,244,255,.72) 100%)}
 [data-theme="dark"] .hero-vid-ov{background:linear-gradient(160deg,rgba(11,18,32,.78) 38%,rgba(15,23,42,.62) 100%)}
+/* contact + experience reuse the same background video layers, held at viewport
+   size (sticky) so a tall section doesn't blow the video up; overflow:clip keeps
+   sticky working where overflow:hidden would break it */
+#contact,#experience{position:relative;overflow:clip}
+.sec-vid{position:absolute;inset:0;z-index:0;pointer-events:none}
+.sec-vid-in{position:sticky;top:0;height:100vh;overflow:hidden}
+#contact>.si,#experience>.si{position:relative;z-index:1}
+/* heavier tint: video stays a faint texture rather than a hero-style feature */
+.sec-vid-ov--soft{background:linear-gradient(160deg,rgba(255,255,255,.93) 38%,rgba(240,244,255,.88) 100%)}
+[data-theme="dark"] .sec-vid-ov--soft{background:linear-gradient(160deg,rgba(11,18,32,.92) 38%,rgba(15,23,42,.86) 100%)}
 @media(prefers-reduced-motion:reduce){.hero-vid{display:none}}
 
 /* perspective floor inside the dark stats band + footer */

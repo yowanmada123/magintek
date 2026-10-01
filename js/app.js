@@ -244,19 +244,32 @@ document.addEventListener('keydown',e=>{
 const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
-// Hero background video: keep it replaying forever. `loop` handles the normal
-// case; this restarts it if a browser still fires `ended`, resumes it after the
-// tab comes back, and starts it on first interaction if autoplay was blocked.
+// Section background videos (hero, contact, experience): keep each replaying forever while
+// it is on screen. `loop` handles the normal case; this restarts it if a browser
+// still fires `ended`, resumes it after the tab comes back, starts it on first
+// interaction if autoplay was blocked, and pauses it while scrolled out of view
+// (the below-the-fold ones use preload="none", so they only download once reached).
 (function(){
-  const v=document.querySelector('.hero-vid');
-  if(!v) return;
-  v.muted=true;
-  const play=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
-  v.addEventListener('ended',()=>{v.currentTime=0;play();});
-  v.addEventListener('pause',()=>{if(!document.hidden)play();});
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();});
-  ['pointerdown','keydown','touchstart','scroll'].forEach(ev=>addEventListener(ev,play,{once:true,passive:true}));
-  play();
+  const vids=[...document.querySelectorAll('.hero-vid')];
+  if(!vids.length||matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const inView=new Set();
+  const play=v=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+  const playVisible=()=>{if(!document.hidden)inView.forEach(play);};
+  vids.forEach(v=>{
+    v.muted=true;
+    v.addEventListener('ended',()=>{v.currentTime=0;if(inView.has(v))play(v);});
+    v.addEventListener('pause',()=>{if(!document.hidden&&inView.has(v))play(v);});
+  });
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{
+      if(en.isIntersecting){inView.add(en.target);if(!document.hidden)play(en.target);}
+      else{inView.delete(en.target);en.target.pause();}
+    }));
+    vids.forEach(v=>io.observe(v));
+  }else vids.forEach(v=>inView.add(v));
+  document.addEventListener('visibilitychange',playVisible);
+  ['pointerdown','keydown','touchstart','scroll'].forEach(ev=>addEventListener(ev,playVisible,{once:true,passive:true}));
+  playVisible();
 })();
 
 // Section entrance: every content block below the hero animates in when it
